@@ -19,7 +19,7 @@
 | Receptor de localiza&ccedil;&atilde;o - UPD                      | Leonardo B. |
 | Servidor de acesso ao BD - TCP | Jorge |
 | Servi&ccedil;o Web Soap |  |
-| Servi&ccedil;o Web Rest |  |
+| Servi&ccedil;o Web Rest | Guilherme |
 | Simulador de localiza&ccedil;&atilde;o do ve&iacute;culo UDP |  |
 | Cliente com interface texto para o servidor TCP |  |
 | Cliente com iterface gr&aacute;fica para o servi&ccedil;o Soap |  |
