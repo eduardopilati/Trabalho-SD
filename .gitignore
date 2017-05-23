@@ -8,3 +8,5 @@
 /ServerTCP/nbproject/private/
 /ServerUDP/nbproject/private/
 /Database/build/
+/Database/dist/
+/ServerUDP/dist/
