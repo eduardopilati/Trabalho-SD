@@ -21,6 +21,6 @@
 | Servi&ccedil;o Web Soap |  |
 | Servi&ccedil;o Web Rest | Guilherme |
 | Simulador de localiza&ccedil;&atilde;o do ve&iacute;culo UDP |  |
-| Cliente com interface texto para o servidor TCP |  |
+| Cliente com interface texto para o servidor TCP | Marciel  |
 | Cliente com iterface gr&aacute;fica para o servi&ccedil;o Soap |  |
 | Cliente Web para o servi&ccedil;o Rest |  |
