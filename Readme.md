@@ -24,3 +24,8 @@
 | Cliente com interface texto para o servidor TCP | Marciel  |
 | Cliente com iterface gr&aacute;fica para o servi&ccedil;o Soap |  |
 | Cliente Web para o servi&ccedil;o Rest |  |
+
+## Orienta&ccedil;&otilde;es
+
+ * Vers&atilde;a do Net Beans: 8.2
+ * Vers&atilde;a do Java: 1.8
