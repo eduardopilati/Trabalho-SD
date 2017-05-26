@@ -1,6 +1,8 @@
 package data;
 
-public class Veiculo {
+import java.io.Serializable;
+
+public class Veiculo implements Serializable {
     private Integer codigo;
     private String placa;
     private Integer tipo;
