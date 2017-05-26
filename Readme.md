@@ -16,11 +16,11 @@
 
 | Aplica&ccedil;&atilde;o | Componente |
 | ------------------------|------------|
-| Receptor de localiza&ccedil;&atilde;o - UPD                      | Leonardo B. |
+| Receptor de localiza&ccedil;&atilde;o - UPD | Leonardo B. |
 | Servidor de acesso ao BD - TCP | Jorge |
 | Servi&ccedil;o Web Soap | Gustavo |
 | Servi&ccedil;o Web Rest | Guilherme |
-| Simulador de localiza&ccedil;&atilde;o do ve&iacute;culo UDP |  |
+| Simulador de localiza&ccedil;&atilde;o do ve&iacute;culo UDP | Eduardo |
 | Cliente com interface texto para o servidor TCP | Marciel  |
 | Cliente com iterface gr&aacute;fica para o servi&ccedil;o Soap |  |
 | Cliente Web para o servi&ccedil;o Rest |  |
