@@ -27,5 +27,5 @@
 
 ## Orienta&ccedil;&otilde;es
 
- * Vers&atilde;a do Net Beans: 8.2
- * Vers&atilde;a do Java: 1.8
+ * Vers&atilde;o do Net Beans: 8.2
+ * Vers&atilde;o do Java: 1.8
