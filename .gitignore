@@ -10,3 +10,5 @@
 /Database/build/
 /Database/dist/
 /ServerUDP/dist/
+/ClientUDP/build/
+/ClientUDP/dist/
