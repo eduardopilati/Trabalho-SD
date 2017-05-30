@@ -23,7 +23,7 @@
 | Simulador de localiza&ccedil;&atilde;o do ve&iacute;culo UDP | Eduardo |
 | Cliente com interface texto para o servidor TCP | Marciel  |
 | Cliente com iterface gr&aacute;fica para o servi&ccedil;o Soap |  |
-| Cliente Web para o servi&ccedil;o Rest |  |
+| Cliente Web para o servi&ccedil;o Rest | Tiago |
 
 ## Orienta&ccedil;&otilde;es
 
