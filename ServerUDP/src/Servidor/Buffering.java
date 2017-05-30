@@ -1,26 +1,20 @@
-package Servidor;
+package servidor;
 
 import java.net.DatagramPacket;
-import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
-/**
- *
- * @author LeonardoBrum
- */
 public class Buffering {
 
-    private final ArrayBlockingQueue<DatagramPacket> buffering;
+    private final LinkedBlockingQueue<DatagramPacket> buffering;
 
     public Buffering(int t) {
-        buffering = new ArrayBlockingQueue<DatagramPacket>(t);
+        buffering = new LinkedBlockingQueue<>(t);
     }
 
-    //Insere pacote na fila
     public void insere(DatagramPacket pacote) throws InterruptedException {
         buffering.put(pacote);
     }
 
-    //Retira pacote da fila
     public DatagramPacket retira() throws InterruptedException {
         DatagramPacket pacote = buffering.take();
 
