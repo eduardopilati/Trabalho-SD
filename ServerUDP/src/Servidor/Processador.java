@@ -6,25 +6,30 @@ import database.DatabaseHelper;
 import java.net.DatagramPacket;
 import util.Utilidades;
 
-public class Processador extends Thread{
-    private final Buffering queue;
-    
-    public Processador(Buffering q) {
+public class Processador extends Thread {
+
+    private Buffer queue;
+
+    public Processador() {
+        super();
+    }
+
+    public Processador(Buffer q) {
+        this();
         queue = q;
     }
-    
+
     @Override
-    public void run(){
-        while(true){
+    public void run() {
+        System.out.println("Processador iniciado");
+        while (true) {
             try {
                 DatagramPacket pacote;
-                synchronized(queue){
-                    pacote = queue.retira();
-                }
+                pacote = queue.retira();
                 Posicao posicao = Utilidades.desserializar(pacote.getData());
-                
+
                 Veiculo veiculo = DatabaseHelper.consultarVeiculo(posicao.getCodigo());
-                if(veiculo != null){
+                if (veiculo != null) {
                     DatabaseHelper.adicionarPosicao(posicao);
                     System.out.printf("Posicao inserida com sucesso Cod:%d", posicao.getCodigo());
                 }
@@ -32,12 +37,14 @@ public class Processador extends Thread{
                 System.err.println("Erro ao processar posicao");
                 System.err.println(e);
             }
-            
         }
-        
     }
 
-    public Buffering getQueue() {
+    public Buffer getQueue() {
         return queue;
+    }
+
+    public void setQueue(Buffer queue) {
+        this.queue = queue;
     }
 }
