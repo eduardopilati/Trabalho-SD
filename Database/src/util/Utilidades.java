@@ -27,4 +27,18 @@ public class Utilidades {
             }
         }
     }
+    
+    public static boolean validarLatitude(float latitude){
+        if(latitude >= -90f && latitude <= 90f){
+            return true;
+        }
+        return false;
+    }
+    
+    public static boolean validarLongitude(float longitude){
+        if(longitude >= -180f && longitude <= 180f){
+            return true;
+        }
+        return false;
+    }
 }
