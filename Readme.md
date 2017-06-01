@@ -15,7 +15,7 @@
 ## Aplica&ccedil;&otilde;es
 
 | Aplica&ccedil;&atilde;o | Componente | Status |
-| ------------------------|------------|  |
+| ------------------------|------------|-----------|
 | Receptor de localiza&ccedil;&atilde;o - UPD | Leonardo B. |  |
 | Servidor de acesso ao BD - TCP | Jorge |  |
 | Servi&ccedil;o Web Soap | Gustavo |  |
