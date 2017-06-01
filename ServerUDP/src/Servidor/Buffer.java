@@ -13,16 +13,10 @@ public class Buffer {
     }
 
     public void insere(DatagramPacket pacote) throws InterruptedException {
-        synchronized (buffer){
-            buffer.put(pacote);
-        }
+        buffer.put(pacote);
     }
 
     public DatagramPacket retira() throws InterruptedException {
-        DatagramPacket pacote;
-        synchronized (buffer){
-            pacote = buffer.take();
-        }
-        return pacote;
+        return buffer.take();
     }
 }

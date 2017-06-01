@@ -84,7 +84,6 @@ public class DatabaseHelper {
     }
     
     public static Veiculo consultarVeiculo(Integer codigo) throws DatabaseException {
-        System.out.println("teste");
         try{
             Connection conn = ConnectionFactory.getConnection();
             String sql = "select * from veiculo where codigo=?";
