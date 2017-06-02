@@ -44,7 +44,7 @@
 
 ### Consultar:
  * Cliente envia o inteiro 3 ao servidor
- * Cliente envia uma classe data.Veiculo ao servidor
+ * Cliente envia um inteiro correspondendo ao codigo do ve&iacute;culo
  * Servidor retorna uma classe data.Veiculo ao cliente
 
 ### Alterar
