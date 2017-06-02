@@ -29,3 +29,29 @@
 
  * Vers&atilde;o do Net Beans: 8.2
  * Vers&atilde;o do Java: 1.8
+
+## Comunica&ccedil;&atilde;o do servidor e cliente TCP
+
+### Adicionar:
+ * Cliente envia o inteiro 1 ao servidor
+ * Cliente envia uma classe data.Veiculo ao servidor
+ * Servidor retorna uma mensagem de sucesso ou falha
+ 
+### Listar Todos:
+ * Cliente envia o inteiro 2 ao servidor
+ * Servidor retorna um List<Veiculo>
+
+### Consultar:
+ * Cliente envia o inteiro 3 ao servidor
+ * Cliente envia uma classe data.Veiculo ao servidor
+ * Servidor retorna uma classe data.Veiculo ao cliente
+
+### Alterar
+ * Cliente envia o inteiro 4 ao servidor
+ * Cliente envia uma classe data.Veiculo ao servidor
+ * Servidor retorna uma mensagem de sucesso ou falha
+
+### Excluir
+ * Cliente envia o inteiro 5 ao servidor
+ * Cliente envia uma classe data.Veiculo ao servidor
+ * Servidor retorna uma mensagem de sucesso ou falha
