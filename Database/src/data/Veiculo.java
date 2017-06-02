@@ -9,7 +9,12 @@ public class Veiculo implements Serializable {
     private Integer capacidade;
     private String unCapac;
     
+    public Veiculo(){
+        
+    }
+    
     public Veiculo(int c, String p, int t, int cap, String un) {
+        this();
         this.codigo = c;
         this.placa = p;
         this.tipo = t;
