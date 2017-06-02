@@ -56,3 +56,8 @@
  * Cliente envia o inteiro 5 ao servidor
  * Cliente envia um inteiro correspondendo ao codigo do ve&iacute;culo
  * Servidor retorna uma mensagem de sucesso ou falha
+
+### Consultar Localizações
+ * Cliente envia o inteiro 6 ao servidor
+ * Cliente envia uma classe data.Veiculo ao servidor
+ * Servidor retorna um List<Posicao>
