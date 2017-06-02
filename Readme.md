@@ -60,4 +60,4 @@
 ### Consultar Localizações
  * Cliente envia o inteiro 6 ao servidor
  * Cliente envia uma classe data.Veiculo ao servidor
- * Servidor retorna um List<Posicao>
+ * Servidor retorna um List\<Posicao>
