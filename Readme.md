@@ -37,8 +37,9 @@
  * Cliente envia uma classe data.Veiculo ao servidor
  * Servidor retorna uma mensagem de sucesso ou falha
  
-### Listar Todos:
+### Listar Tipo:
  * Cliente envia o inteiro 2 ao servidor
+ * Cliente envia um inteiro correspondendo ao tipo dos ve&iacute;culos
  * Servidor retorna um List<Veiculo>
 
 ### Consultar:
