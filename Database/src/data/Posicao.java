@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Posicao implements Serializable {
+    
     private Integer codigo;
     private Integer seq;
     private Date data;

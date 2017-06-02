@@ -8,7 +8,15 @@ public class Veiculo implements Serializable {
     private Integer tipo;
     private Integer capacidade;
     private String unCapac;
-
+    
+    public Veiculo(int c, String p, int t, int cap, String un) {
+        this.codigo = c;
+        this.placa = p;
+        this.tipo = t;
+        this.capacidade = cap;
+        this.unCapac = un;
+    }
+    
     public Integer getCodigo() {
         return codigo;
     }
@@ -47,5 +55,5 @@ public class Veiculo implements Serializable {
 
     public void setUnCapac(String unCapac) {
         this.unCapac = unCapac;
-    }
+    }  
 }
