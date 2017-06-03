@@ -2,7 +2,7 @@ package config;
 
 public class ServidorUdp {
     private String host = "localhost";
-    private int porta = 2010;
+    private int porta = 2006;
     private int delayEntreMensagens = 1000;
 
     public String getHost() {
