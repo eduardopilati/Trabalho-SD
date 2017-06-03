@@ -28,34 +28,34 @@ public class telainterface extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        addbt = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btaddinterface = new javax.swing.JButton();
+        btaltinterface = new javax.swing.JButton();
+        btexcinterface = new javax.swing.JButton();
+        btconsinterface = new javax.swing.JButton();
+        btlistinterface = new javax.swing.JButton();
+        btlocinterface = new javax.swing.JButton();
+        btsairinterface = new javax.swing.JButton();
 
         jLabel1.setText("Interface Soap Cliente");
 
-        addbt.setText("Adicionar");
-        addbt.addActionListener(new java.awt.event.ActionListener() {
+        btaddinterface.setText("Adicionar");
+        btaddinterface.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addbtActionPerformed(evt);
+                btaddinterfaceActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Alterar");
+        btaltinterface.setText("Alterar");
 
-        jButton2.setText("Excluir");
+        btexcinterface.setText("Excluir");
 
-        jButton3.setText("Consultar");
+        btconsinterface.setText("Consultar");
 
-        jButton4.setText("Listar");
+        btlistinterface.setText("Listar");
 
-        jButton5.setText("Localizar");
+        btlocinterface.setText("Localizar");
 
-        jButton6.setText("Sair");
+        btsairinterface.setText("Sair");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -69,13 +69,13 @@ public class telainterface extends javax.swing.JPanel {
                         .addGap(139, 139, 139))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addbt, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btaltinterface, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btaddinterface, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btexcinterface, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btconsinterface, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btlistinterface, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btlocinterface, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btsairinterface, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(122, 122, 122))))
         );
         layout.setVerticalGroup(
@@ -84,36 +84,36 @@ public class telainterface extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(addbt)
+                .addComponent(btaddinterface)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btaltinterface)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(btexcinterface)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(btconsinterface)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
+                .addComponent(btlistinterface)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addComponent(btlocinterface)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton6)
+                .addComponent(btsairinterface)
                 .addContainerGap(43, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addbtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbtActionPerformed
+    private void btaddinterfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btaddinterfaceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_addbtActionPerformed
+    }//GEN-LAST:event_btaddinterfaceActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addbt;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton btaddinterface;
+    private javax.swing.JButton btaltinterface;
+    private javax.swing.JButton btconsinterface;
+    private javax.swing.JButton btexcinterface;
+    private javax.swing.JButton btlistinterface;
+    private javax.swing.JButton btlocinterface;
+    private javax.swing.JButton btsairinterface;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

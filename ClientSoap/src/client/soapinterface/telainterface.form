@@ -25,13 +25,13 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jButton1" min="-2" pref="164" max="-2" attributes="0"/>
-                          <Component id="addbt" min="-2" pref="164" max="-2" attributes="0"/>
-                          <Component id="jButton2" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-                          <Component id="jButton3" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-                          <Component id="jButton4" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-                          <Component id="jButton5" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-                          <Component id="jButton6" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="btaltinterface" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="btaddinterface" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="btexcinterface" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="btconsinterface" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="btlistinterface" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="btlocinterface" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="btsairinterface" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                   </Group>
@@ -45,19 +45,19 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="addbt" min="-2" max="-2" attributes="0"/>
+              <Component id="btaddinterface" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="btaltinterface" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+              <Component id="btexcinterface" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+              <Component id="btconsinterface" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+              <Component id="btlistinterface" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+              <Component id="btlocinterface" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+              <Component id="btsairinterface" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="43" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -69,40 +69,40 @@
         <Property name="text" type="java.lang.String" value="Interface Soap Cliente"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="addbt">
+    <Component class="javax.swing.JButton" name="btaddinterface">
       <Properties>
         <Property name="text" type="java.lang.String" value="Adicionar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addbtActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btaddinterfaceActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btaltinterface">
       <Properties>
         <Property name="text" type="java.lang.String" value="Alterar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btexcinterface">
       <Properties>
         <Property name="text" type="java.lang.String" value="Excluir"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btconsinterface">
       <Properties>
         <Property name="text" type="java.lang.String" value="Consultar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="btlistinterface">
       <Properties>
         <Property name="text" type="java.lang.String" value="Listar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="btlocinterface">
       <Properties>
         <Property name="text" type="java.lang.String" value="Localizar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton6">
+    <Component class="javax.swing.JButton" name="btsairinterface">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
