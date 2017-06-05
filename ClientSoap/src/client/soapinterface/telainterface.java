@@ -46,16 +46,46 @@ public class telainterface extends javax.swing.JPanel {
         });
 
         btaltinterface.setText("Alterar");
+        btaltinterface.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btaltinterfaceActionPerformed(evt);
+            }
+        });
 
         btexcinterface.setText("Excluir");
+        btexcinterface.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btexcinterfaceActionPerformed(evt);
+            }
+        });
 
         btconsinterface.setText("Consultar");
+        btconsinterface.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btconsinterfaceActionPerformed(evt);
+            }
+        });
 
         btlistinterface.setText("Listar");
+        btlistinterface.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btlistinterfaceActionPerformed(evt);
+            }
+        });
 
         btlocinterface.setText("Localizar");
+        btlocinterface.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btlocinterfaceActionPerformed(evt);
+            }
+        });
 
         btsairinterface.setText("Sair");
+        btsairinterface.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btsairinterfaceActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -102,9 +132,68 @@ public class telainterface extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btaddinterfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btaddinterfaceActionPerformed
+        new telaadd().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btaddinterfaceActionPerformed
 
+    private void btaltinterfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btaltinterfaceActionPerformed
+        new telainterface().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btaltinterfaceActionPerformed
+
+    private void btexcinterfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btexcinterfaceActionPerformed
+        new telaexclui().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btexcinterfaceActionPerformed
+
+    private void btconsinterfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconsinterfaceActionPerformed
+        new telaconsulta().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btconsinterfaceActionPerformed
+
+    private void btlistinterfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlistinterfaceActionPerformed
+        new telalistatipo().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btlistinterfaceActionPerformed
+
+    private void btlocinterfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlocinterfaceActionPerformed
+        new telalocaliza().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btlocinterfaceActionPerformed
+
+    private void btsairinterfaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairinterfaceActionPerformed
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btsairinterfaceActionPerformed
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(telainterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(telainterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(telainterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(telainterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new telainterface().setVisible(true);
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btaddinterface;
@@ -116,4 +205,8 @@ public class telainterface extends javax.swing.JPanel {
     private javax.swing.JButton btsairinterface;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    private void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
