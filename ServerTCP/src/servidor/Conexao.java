@@ -67,7 +67,7 @@ public class Conexao extends Thread{
             oos.writeObject(msg);
             
         } catch (Exception e){
-            String msg = "Erro ao processar veiculo";
+            String msg = "Erro ao processar veículo";
             oos.writeObject(msg);
             
             System.err.println(msg);
@@ -101,7 +101,7 @@ public class Conexao extends Thread{
         } catch (Exception e){
             oos.writeObject(new Veiculo());
             
-            System.err.println("Erro ao processar veiculo");
+            System.err.println("Erro ao processar veículo");
             System.err.println(e);
         }
     }
