@@ -246,8 +246,10 @@ public class DatabaseHelper {
             String sql = "INSERT INTO posicao(codigo, data_hora, latitude, longitude) values(?, ?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(sql);
             
+            ;
+            
             stmt.setInt(1, posicao.getCodigo());
-            stmt.setDate(2, new java.sql.Date(posicao.getData().getTime()));
+            stmt.setTimestamp(2, new java.sql.Timestamp(posicao.getData().getTime()));
             stmt.setFloat(3, posicao.getLatitude());
             stmt.setFloat(4, posicao.getLongitude());
             stmt.execute();
