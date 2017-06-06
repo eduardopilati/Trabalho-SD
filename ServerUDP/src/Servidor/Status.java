@@ -1,6 +1,6 @@
 package Servidor;
 
 public class Status {
-    Integer erros;
+    Integer tempoSemResposta;
     Boolean online;
 }

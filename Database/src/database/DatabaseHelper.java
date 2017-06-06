@@ -156,6 +156,27 @@ public class DatabaseHelper {
         }
     }
     
+    public static List<Integer> codigoTodosVeiculos() throws DatabaseException{
+        try{
+            Connection conn = ConnectionFactory.getConnection();
+            String sql = "select codigo from veiculo";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            
+            ArrayList<Integer> codigos = new ArrayList<>();
+            while(rs.next()){
+                codigos.add(rs.getInt("codigo"));
+            }
+            
+            rs.close();
+            stmt.close();
+            conn.close();
+            return codigos;
+        }catch(Exception e){
+            throw new DatabaseException(e);
+        }
+    }
+    
     public static List<Posicao> consultarPosicoes(Veiculo veiculo) throws DatabaseException{
         try{
             Connection conn = ConnectionFactory.getConnection();
