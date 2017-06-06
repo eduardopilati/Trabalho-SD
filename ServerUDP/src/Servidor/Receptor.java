@@ -30,7 +30,6 @@ public class Receptor extends Thread {
                 DatagramPacket receivePacket = new DatagramPacket(dadosRecebido, dadosRecebido.length);
                 try {
                     serverSocket.receive(receivePacket);
-                    System.out.println("recebendo");
                     queue.put(receivePacket);
 
                 } catch (IOException | InterruptedException e) {

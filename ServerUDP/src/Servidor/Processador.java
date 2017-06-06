@@ -38,10 +38,9 @@ public class Processador extends Thread {
                     synchronized(respostas){
                         respostas.add(posicao.getCodigo());
                     }
-                    System.out.printf("Posicao inserida com sucesso Cod:%d", posicao.getCodigo());
                 }
             } catch (Exception e) {
-                System.err.println("Erro ao processar posicao");
+                System.err.println("Erro ao processar posição");
                 System.err.println(e);
             }
         }

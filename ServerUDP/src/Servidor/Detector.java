@@ -1,4 +1,4 @@
-package Servidor;
+package servidor;
 
 import config.ServidorUdp;
 import database.DatabaseException;
@@ -15,6 +15,7 @@ public class Detector extends Thread{
     public Detector(){
         super();
         servidorUdp = new ServidorUdp();
+        status = new HashMap<>();
     }
     
     public Detector(LinkedList<Integer> r){
@@ -24,6 +25,7 @@ public class Detector extends Thread{
     
     @Override
     public void run(){
+        System.out.println("Detector Iniciado");
         while(true){
             try{
                 
@@ -91,6 +93,7 @@ public class Detector extends Thread{
     }
     
     private void mostrarVeiculos() {
+        System.out.println("*****");
         for(Integer cod : status.keySet()){
             Status v = status.get(cod);
             
@@ -102,5 +105,6 @@ public class Detector extends Thread{
                 System.out.printf("Veículo %d está fora de área de cobertura\n", cod);
             }
         }
+        System.out.println("*****");
     }
 }
