@@ -5,16 +5,17 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.SocketException;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class Receptor extends Thread {
 
-    private Buffer queue;
+    private LinkedBlockingQueue<DatagramPacket> queue;
 
     public Receptor() {
         super();
     }
 
-    public Receptor(Buffer q) {
+    public Receptor(LinkedBlockingQueue<DatagramPacket> q) {
         this();
         queue = q;
     }
@@ -30,7 +31,7 @@ public class Receptor extends Thread {
                 try {
                     serverSocket.receive(receivePacket);
                     System.out.println("recebendo");
-                    queue.insere(receivePacket);
+                    queue.put(receivePacket);
 
                 } catch (IOException | InterruptedException e) {
                     System.err.println("Erro ao receber mensagem");
@@ -43,11 +44,11 @@ public class Receptor extends Thread {
         }
     }
 
-    public Buffer getQueue() {
+    public LinkedBlockingQueue getQueue() {
         return queue;
     }
 
-    public void setQueue(Buffer queue) {
+    public void setQueue(LinkedBlockingQueue queue) {
         this.queue = queue;
     }
 }
