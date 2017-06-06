@@ -19,6 +19,8 @@ public class ClienteTcp {
     
     private static String menu;
     private static Integer operacao;
+    
+    static Scanner lerTeclado = new Scanner(System.in);
 
     public static void main(String[] args) {
         Scanner lerTeclado = new Scanner(System.in);
@@ -66,53 +68,45 @@ public class ClienteTcp {
     }
 
     public static void adicionar() {
-        Scanner lerTeclado = new Scanner(System.in);
         try {
+            Veiculo veiculo = new Veiculo();
             
             System.out.println("\n************ Adicionar veiculo ************");
             System.out.print("\nDigite o código do veiculo: ");
-            int cod = Integer.parseInt(lerTeclado.nextLine());
+            veiculo.setCodigo(lerTeclado.nextInt());
 
             System.out.print("\nDigite a placa do veiculo: ");
-            String placa = lerTeclado.nextLine();
+            veiculo.setPlaca(lerTeclado.next());
 
             System.out.print("\nDigite o tipo do veiculo: ");
-            int tipo = Integer.parseInt(lerTeclado.nextLine());
+            veiculo.setTipo(lerTeclado.nextInt());
 
             System.out.print("\nDigite a capacidade do veiculo: ");
-            int cap = Integer.parseInt(lerTeclado.nextLine());
+            veiculo.setCapacidade(lerTeclado.nextInt());
 
             System.out.print("\nDigite a un do veiculo: ");
-            String un = lerTeclado.nextLine();
+            veiculo.setUnCapac(lerTeclado.next());
             
-            Veiculo veiculo = new Veiculo(cod, placa, tipo, cap, un);
-            
-             String enviarDados = "ADICIONAR" + ";"
-                    + veiculo.getCodigo() + ";"
-                    + veiculo.getTipo() + ";"
-                    + veiculo.getPlaca() + ";"
-                    + veiculo.getCapacidade()+ ";"
-                    + veiculo.getUnCapac();
-            
+            envia.writeInt(1);
             envia.writeObject(veiculo);
             envia.flush();
             
             System.out.println("Dados enviados para o servidor. Aguardando confirmação...");
 
-            boolean verifica = recebe.readBoolean();
-            if (verifica == true) {
-                System.out.println("\n******************* veiculo adicionado com sucesso! *********************");
-            } else {
-                System.out.println("\nxxxxxxxxxxxxxxxxxxxxx ERRO! veiculo não adicionado xxxxxxxxxxxxxxxxxxxxxx");
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(ClienteTcp.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(recebe.readObject());
+        } catch (Exception e) {
+            System.err.println("Erro ao adicionar veiculo");
+            System.err.println(e);
         }
     }
 
     public static void listarTodos() {
         try {
-            envia.writeObject("LISTAR;");
+            System.out.println("Digite o tipo dos veiculos:");
+//            int tipo = 
+            
+            envia.writeInt(2);
+            
             // combinar como serão retornados os dados do servidor para efetuar a leitura aqui.
             String dadosRecebidos = recebe.readObject().toString();
             
