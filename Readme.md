@@ -37,13 +37,14 @@
  * Cliente envia uma classe data.Veiculo ao servidor
  * Servidor retorna uma mensagem de sucesso ou falha
  
-### Listar Todos:
+### Listar Tipo:
  * Cliente envia o inteiro 2 ao servidor
- * Servidor retorna um List<Veiculo>
+ * Cliente envia um inteiro correspondendo ao tipo dos ve&iacute;culos
+ * Servidor retorna um List\<Veiculo>
 
 ### Consultar:
  * Cliente envia o inteiro 3 ao servidor
- * Cliente envia uma classe data.Veiculo ao servidor
+ * Cliente envia um inteiro correspondendo ao codigo do ve&iacute;culo
  * Servidor retorna uma classe data.Veiculo ao cliente
 
 ### Alterar
@@ -53,5 +54,10 @@
 
 ### Excluir
  * Cliente envia o inteiro 5 ao servidor
- * Cliente envia uma classe data.Veiculo ao servidor
+ * Cliente envia um inteiro correspondendo ao codigo do ve&iacute;culo
  * Servidor retorna uma mensagem de sucesso ou falha
+
+### Consultar Localizações
+ * Cliente envia o inteiro 6 ao servidor
+ * Cliente envia uma classe data.Veiculo ao servidor
+ * Servidor retorna um List\<Posicao>

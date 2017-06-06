@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://www.netbeans.org/ns/project/1">
-    <type>org.netbeans.modules.java.j2seproject</type>
+    <type>org.netbeans.modules.web.project</type>
     <configuration>
-        <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
+        <buildExtensions xmlns="http://www.netbeans.org/ns/ant-build-extender/1">
+            <extension file="rest-build.xml" id="rest.5"/>
+        </buildExtensions>
+        <data xmlns="http://www.netbeans.org/ns/web-project/3">
             <name>ServerRest</name>
+            <minimum-ant-version>1.6.5</minimum-ant-version>
+            <web-module-libraries/>
+            <web-module-additional-libraries/>
             <source-roots>
-                <root id="src.dir"/>
+                <root id="src.dir" name="Pacotes de Códigos-fonte"/>
             </source-roots>
             <test-roots>
-                <root id="test.src.dir"/>
+                <root id="test.src.dir" name="Pacotes de Teste"/>
             </test-roots>
         </data>
-        <references xmlns="http://www.netbeans.org/ns/ant-project-references/1">
-            <reference>
-                <foreign-project>Database</foreign-project>
-                <artifact-type>jar</artifact-type>
-                <script>build.xml</script>
-                <target>jar</target>
-                <clean-target>clean</clean-target>
-                <id>jar</id>
-            </reference>
-        </references>
     </configuration>
 </project>
