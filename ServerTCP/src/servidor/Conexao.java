@@ -13,6 +13,8 @@ import java.util.List;
 
 public class Conexao extends Thread{
     Socket cliente;
+    ObjectInputStream entrada;
+    ObjectOutputStream saida;
     
     public Conexao(Socket cliente){
         this.cliente = cliente;
@@ -20,55 +22,63 @@ public class Conexao extends Thread{
     
     @Override
     public void run(){
-        try (ObjectInputStream ois = new ObjectInputStream(cliente.getInputStream())) {
-            try (ObjectOutputStream oos = new ObjectOutputStream(cliente.getOutputStream())) {
-                processa(ois, oos);
+        try{
+            try{
+                entrada = new ObjectInputStream(cliente.getInputStream());
+                saida = new ObjectOutputStream(cliente.getOutputStream()); 
+                processa();
+            } finally {
+                entrada.close();
+                saida.close();
             }
-        } catch (Exception e) {
-            System.err.println("Erro na comunicação");
+        }catch(Exception e){
+            System.err.println("Erro na comunicação com o cliente");
             System.err.println(e);
         }
     }
 
-    private void processa(ObjectInputStream ois, ObjectOutputStream oos) throws Exception {
-        while(true){
-            int codigo = ois.readInt();
-            switch (codigo){
+    private void processa() throws Exception {
+        
+        while(true){           
+            
+            switch (entrada.readInt()){
                 case 1:
-                    adicionar(ois, oos);
+                    adicionar();
                     break;
                 case 2:
-                    listarTipo(ois, oos);
+                    listarTipo();
                     break;
                 case 3:
-                    consultar(ois, oos);
+                    consultar();
                     break;
                 case 4:
-                    alterar(ois, oos);
+                    alterar();
                     break;
                 case 5:
-                    excluir(ois, oos);
+                    excluir();
                     break;
                 case 6:
-                    consultarPosicoes(ois, oos);
+                    consultarPosicoes();
+                    break;
                 default:
                     throw new IOException("Código Inválido");
             }
         }
     }
 
-    private void adicionar(ObjectInputStream ois, ObjectOutputStream oos) throws IOException{
+    private void adicionar() throws IOException{
         try{
-           
-            Veiculo veiculo = (Veiculo) ois.readObject();
+            Veiculo veiculo = (Veiculo) entrada.readObject();
             DatabaseHelper.adicionarVeiculo(veiculo);
-            
+
             String msg = "O Veículo foi adicionado";
-            oos.writeObject(msg);
+            saida.writeObject(msg);
+            saida.flush();
             
         } catch (Exception e){
             String msg = "Erro ao processar veículo";
-            oos.writeObject(msg);
+            saida.writeObject(msg);
+            saida.flush();
             
             System.err.println(msg);
             System.err.println(e);
@@ -76,77 +86,82 @@ public class Conexao extends Thread{
         
     }
 
-    private void listarTipo(ObjectInputStream ois, ObjectOutputStream oos) throws IOException {
+    private void listarTipo() throws IOException {
         try{
-           
-            int tipo = ois.readInt();
+            int tipo = entrada.readInt();
             List<Veiculo> veiculosPorTipo = DatabaseHelper.veiculosPorTipo(tipo);
-            oos.writeObject(veiculosPorTipo);
+            saida.writeObject(veiculosPorTipo);
+            saida.flush();
             
         } catch (Exception e){
-            oos.writeObject(new ArrayList<Veiculo>());
+            saida.writeObject(new ArrayList<>());
+            saida.flush();
             
             System.err.println("Erro ao processar listaTipo");
             System.err.println(e);
         }
     }
 
-    private void consultar(ObjectInputStream ois, ObjectOutputStream oos) throws IOException {
+    private void consultar() throws IOException {
         try{
-           
-            int cod = ois.readInt();
+            int cod = entrada.readInt();
             Veiculo veiculo = DatabaseHelper.consultarVeiculo(cod);
-            oos.writeObject(veiculo);
+            saida.writeObject(veiculo);
+            saida.flush();
             
         } catch (Exception e){
-            oos.writeObject(new Veiculo());
+            saida.writeObject(new Veiculo());
+            saida.flush();
             
             System.err.println("Erro ao processar veículo");
             System.err.println(e);
         }
     }
 
-    private void alterar(ObjectInputStream ois, ObjectOutputStream oos) throws IOException {
+    private void alterar() throws IOException {
         try{
-           
-            Veiculo veiculo = (Veiculo) ois.readObject();
+            Veiculo veiculo = (Veiculo) entrada.readObject();
             DatabaseHelper.alterarVeiculo(veiculo);
             
             String msg = "O veículo foi alterado";
-            oos.writeObject(msg);
+            saida.writeObject(msg);
+            saida.flush();
             
         } catch (Exception e){
             String msg = "Erro ao alterar veículo";
-            oos.writeObject(msg);
+            saida.writeObject(msg);
+            saida.flush();
             
             System.err.println(msg);
             System.err.println(e);
         }
     }
 
-    private void excluir(ObjectInputStream ois, ObjectOutputStream oos) throws IOException {
+    private void excluir() throws IOException {
         try{
-           
-            int cod = ois.readInt();
+            int cod = entrada.readInt();
+            DatabaseHelper.removerPosicoesDeVeiculo(cod);
             DatabaseHelper.removerVeiculo(cod);
             
             String msg = "O veículo foi excluído";
-            oos.writeObject(msg);
+            saida.writeObject(msg);
+            saida.flush();
             
         } catch (Exception e){
             String msg = "Erro ao excluir veículo";
-            oos.writeObject(msg);
+            saida.writeObject(msg);
+            saida.flush();
             
             System.err.println(msg);
             System.err.println(e);
         }
     }
 
-    private void consultarPosicoes(ObjectInputStream ois, ObjectOutputStream oos) throws IOException {
+    private void consultarPosicoes() throws IOException {
         try{
             List<Posicao> lista;
-            Veiculo veiculo = (Veiculo) ois.readObject();
-            Date data = (Date) ois.readObject();
+            Veiculo veiculo = (Veiculo) entrada.readObject();
+            Date data = (Date) entrada.readObject();
             
             if(data == null){
                 lista = DatabaseHelper.consultarPosicoes(veiculo);
@@ -154,10 +169,11 @@ public class Conexao extends Thread{
                 lista = DatabaseHelper.consultarPosicoes(veiculo, data);
             }
             
-            oos.writeObject(lista);
-            
+            saida.writeObject(lista);
+            saida.flush();
         } catch (Exception e){
-            oos.writeObject(new ArrayList<Posicao>());
+            saida.writeObject(new ArrayList<>());
+            saida.flush();
             
             System.err.println("Erro ao consultar posições");
             System.err.println(e);

@@ -83,6 +83,22 @@ public class DatabaseHelper {
         }
     }
     
+    public static void removerPosicoesDeVeiculo(Integer codigo) throws DatabaseException {
+        try{
+            Connection conn = ConnectionFactory.getConnection();
+            String sql = "delete from posicao where codigo=?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            
+            stmt.setInt(1, codigo);
+            stmt.execute();
+            
+            stmt.close();
+            conn.close();
+        }catch(Exception e){
+            throw new DatabaseException(e);
+        }
+    }
+    
     public static Veiculo consultarVeiculo(Integer codigo) throws DatabaseException {
         try{
             Connection conn = ConnectionFactory.getConnection();
