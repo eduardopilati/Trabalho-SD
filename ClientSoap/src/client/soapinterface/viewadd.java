@@ -57,6 +57,11 @@ public class viewadd extends javax.swing.JFrame {
         jLabel6.setText("UnCapac:");
 
         btvoltaradd.setText("Voltar");
+        btvoltaradd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btvoltaraddActionPerformed(evt);
+            }
+        });
 
         btadicadd.setText("Adicionar");
 
@@ -156,6 +161,10 @@ public class viewadd extends javax.swing.JFrame {
     private void campplacaaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campplacaaddActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campplacaaddActionPerformed
+
+    private void btvoltaraddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltaraddActionPerformed
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_btvoltaraddActionPerformed
 
     /**
      * @param args the command line arguments

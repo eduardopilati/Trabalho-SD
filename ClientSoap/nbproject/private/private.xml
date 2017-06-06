@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/telainterface.java</file>
-            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/telalocaliza.java</file>
-            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/telalistatipo.java</file>
-            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/telaalt.java</file>
-            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/telaconsulta.java</file>
-            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/telaadd.java</file>
-            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/telaexclui.java</file>
+            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/viewlistatipo.java</file>
+            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/viewlocaliza.java</file>
+            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/viewaltera.java</file>
+            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/viewadd.java</file>
+            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/viewconsulta.java</file>
+            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/telamenu.java</file>
+            <file>file:/C:/Users/jades/Desktop/Trabalho-SD-master/ClientSoap/src/client/soapinterface/viewexclui.java</file>
         </group>
     </open-files>
 </project-private>

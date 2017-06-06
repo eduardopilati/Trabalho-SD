@@ -72,6 +72,11 @@ public class viewaltera extends javax.swing.JFrame {
         });
 
         btaltvolt.setText("Voltar");
+        btaltvolt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btaltvoltActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -173,6 +178,10 @@ public class viewaltera extends javax.swing.JFrame {
     private void btaltaltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btaltaltActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btaltaltActionPerformed
+
+    private void btaltvoltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btaltvoltActionPerformed
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_btaltvoltActionPerformed
 
     /**
      * @param args the command line arguments

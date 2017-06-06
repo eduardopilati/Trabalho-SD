@@ -35,6 +35,7 @@ public class telamenu extends javax.swing.JFrame {
         btlistmenu = new javax.swing.JButton();
         btlocmenu = new javax.swing.JButton();
         btsairmenu = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,11 +95,9 @@ public class telamenu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(144, 144, 144)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
+                        .addGap(154, 154, 154)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btaddmenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btaltmenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -106,8 +105,14 @@ public class telamenu extends javax.swing.JFrame {
                             .addComponent(btconsmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btlistmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btlocmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btsairmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(151, Short.MAX_VALUE))
+                            .addComponent(btsairmenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,6 +120,8 @@ public class telamenu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
                 .addComponent(btaddmenu)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btaltmenu)
@@ -126,7 +133,7 @@ public class telamenu extends javax.swing.JFrame {
                 .addComponent(btlistmenu)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btlocmenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(btsairmenu)
                 .addContainerGap())
         );
@@ -141,26 +148,33 @@ public class telamenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btaddmenuActionPerformed
 
     private void btaltmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btaltmenuActionPerformed
+        new viewaltera().setVisible(true);
+
         // TODO add your handling code here:
     }//GEN-LAST:event_btaltmenuActionPerformed
 
     private void btexcmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btexcmenuActionPerformed
+        new viewexclui().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btexcmenuActionPerformed
 
     private void btconsmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btconsmenuActionPerformed
+        new viewconsulta().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btconsmenuActionPerformed
 
     private void btlistmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlistmenuActionPerformed
+        new viewlistatipo().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btlistmenuActionPerformed
 
     private void btlocmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlocmenuActionPerformed
+        new viewlocaliza().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btlocmenuActionPerformed
 
     private void btsairmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairmenuActionPerformed
+        this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_btsairmenuActionPerformed
 
@@ -208,5 +222,6 @@ public class telamenu extends javax.swing.JFrame {
     private javax.swing.JButton btlocmenu;
     private javax.swing.JButton btsairmenu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

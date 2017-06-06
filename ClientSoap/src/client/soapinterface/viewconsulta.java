@@ -60,6 +60,11 @@ public class viewconsulta extends javax.swing.JFrame {
         jLabel6.setText("Uncapac:");
 
         btvoltarcons.setText("Voltar");
+        btvoltarcons.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btvoltarconsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -151,6 +156,10 @@ public class viewconsulta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btvoltarconsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarconsActionPerformed
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_btvoltarconsActionPerformed
 
     /**
      * @param args the command line arguments
