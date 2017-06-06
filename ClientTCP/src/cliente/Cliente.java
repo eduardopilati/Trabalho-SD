@@ -92,7 +92,7 @@ public class Cliente {
     }
 
     private void listarTipo() throws Exception {
-        System.out.println("Digite o tipo dos veículos:");
+        System.out.print("Digite o tipo dos veículos:");
 
         saida.writeInt(2);
         saida.writeInt(scanner.nextInt());
