@@ -6,6 +6,7 @@
 package ws;
 
 import com.google.gson.Gson;
+import data.Posicao;
 import data.Veiculo;
 import database.DatabaseException;
 import database.DatabaseHelper;
@@ -208,4 +209,28 @@ public class wsResource {
          // System.out.println(ex.getMessage());
     }
     }
+    /*
+    @POST
+    @Path("/localiza/{veiculo}/{datahora}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public String localiza(@PathParam ("veiculo")Integer veiculo, @PathParam("datahora") String datahora) throws Exception {
+    /*    try {
+            Posicao p = new Posicao();
+            List<Posicao> list = new ArrayList<Posicao>();
+            
+            if (datahora == null){
+            //    list = DatabaseHelper.consultarPosicoes(veiculo, data);
+            } else {
+                
+            }
+          
+            
+          return null;
+            
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());  
+            return null;
+       } 
+    } */
 }
