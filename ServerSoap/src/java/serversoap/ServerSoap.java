@@ -61,14 +61,6 @@ public class ServerSoap {
         return vel;
     }
 
-    /**
-     * Web service operation
-     */
-    @WebMethod(operationName = "alterar")
-    public Boolean alterar(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") String placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapac") String unCapac) {
-        //TODO write your implementation code here:
-        return null;
-    }
 
     /**
      * Web service operation
@@ -83,6 +75,15 @@ public class ServerSoap {
         vel.setUnCapac(unCapac);        
         DatabaseHelper.adicionarVeiculo(vel);
         return true;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "alterar")
+    public Veiculo alterar(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") String placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapacidade") String unCapacidade) {
+        //TODO write your implementation code here:
+        return null;
     }
 
 
