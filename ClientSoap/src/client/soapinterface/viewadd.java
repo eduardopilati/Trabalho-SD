@@ -176,7 +176,9 @@ public class viewadd extends javax.swing.JFrame {
 
     private void btadicaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btadicaddActionPerformed
         adiciona(Integer.parseInt(campcodadd.getText()), campplacaadd.getText(), Integer.parseInt(camptipoadd.getText()), Integer.parseInt(camptipoadd.getText()), campouncapadd.getText());
-        // TODO add your handling code here:
+        
+
+// TODO add your handling code here:
     }//GEN-LAST:event_btadicaddActionPerformed
 
     /**
