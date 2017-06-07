@@ -101,8 +101,8 @@ public class ServerSoap {
     @WebMethod(operationName = "listar")
     public List listar(@WebParam(name = "tipo") int tipo) throws DatabaseException {
 
-        ArrayList<Veiculo> veiculos = new ArrayList<>();
-        veiculos = (ArrayList<Veiculo>) DatabaseHelper.veiculosPorTipo(tipo);
+        List<Veiculo> veiculos = new ArrayList<>();
+        veiculos = DatabaseHelper.veiculosPorTipo(tipo);
         //TODO write your implementation code here:
         return veiculos;
     }

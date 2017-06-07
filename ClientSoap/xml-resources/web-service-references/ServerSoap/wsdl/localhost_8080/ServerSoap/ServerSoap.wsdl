@@ -31,17 +31,17 @@
 <message name="adicionaResponse">
 <part name="parameters" element="tns:adicionaResponse"/>
 </message>
-<message name="listarTodos">
-<part name="parameters" element="tns:listarTodos"/>
-</message>
-<message name="listarTodosResponse">
-<part name="parameters" element="tns:listarTodosResponse"/>
-</message>
 <message name="adiciona2">
 <part name="parameters" element="tns:adiciona2"/>
 </message>
 <message name="adiciona2Response">
 <part name="parameters" element="tns:adiciona2Response"/>
+</message>
+<message name="listar">
+<part name="parameters" element="tns:listar"/>
+</message>
+<message name="listarResponse">
+<part name="parameters" element="tns:listarResponse"/>
 </message>
 <portType name="ServerSoap">
 <operation name="excluir">
@@ -64,14 +64,15 @@
 <output wsam:Action="http://serversoap/ServerSoap/adicionaResponse" message="tns:adicionaResponse"/>
 <fault message="tns:DatabaseException" name="DatabaseException" wsam:Action="http://serversoap/ServerSoap/adiciona/Fault/DatabaseException"/>
 </operation>
-<operation name="listarTodos">
-<input wsam:Action="http://serversoap/ServerSoap/listarTodosRequest" message="tns:listarTodos"/>
-<output wsam:Action="http://serversoap/ServerSoap/listarTodosResponse" message="tns:listarTodosResponse"/>
-</operation>
 <operation name="adiciona2">
 <input wsam:Action="http://serversoap/ServerSoap/adiciona2Request" message="tns:adiciona2"/>
 <output wsam:Action="http://serversoap/ServerSoap/adiciona2Response" message="tns:adiciona2Response"/>
 <fault message="tns:DatabaseException" name="DatabaseException" wsam:Action="http://serversoap/ServerSoap/adiciona2/Fault/DatabaseException"/>
+</operation>
+<operation name="listar">
+<input wsam:Action="http://serversoap/ServerSoap/listarRequest" message="tns:listar"/>
+<output wsam:Action="http://serversoap/ServerSoap/listarResponse" message="tns:listarResponse"/>
+<fault message="tns:DatabaseException" name="DatabaseException" wsam:Action="http://serversoap/ServerSoap/listar/Fault/DatabaseException"/>
 </operation>
 </portType>
 <binding name="ServerSoapPortBinding" type="tns:ServerSoap">
@@ -124,7 +125,7 @@
 <soap:fault name="DatabaseException" use="literal"/>
 </fault>
 </operation>
-<operation name="listarTodos">
+<operation name="adiciona2">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -132,8 +133,11 @@
 <output>
 <soap:body use="literal"/>
 </output>
+<fault name="DatabaseException">
+<soap:fault name="DatabaseException" use="literal"/>
+</fault>
 </operation>
-<operation name="adiciona2">
+<operation name="listar">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

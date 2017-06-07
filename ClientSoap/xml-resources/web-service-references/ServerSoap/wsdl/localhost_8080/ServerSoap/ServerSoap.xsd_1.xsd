@@ -22,9 +22,9 @@
 
 <xs:element name="excluirResponse" type="tns:excluirResponse"/>
 
-<xs:element name="listarTodos" type="tns:listarTodos"/>
+<xs:element name="listar" type="tns:listar"/>
 
-<xs:element name="listarTodosResponse" type="tns:listarTodosResponse"/>
+<xs:element name="listarResponse" type="tns:listarResponse"/>
 
 <xs:complexType name="consultar">
 <xs:sequence>
@@ -98,15 +98,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarTodos">
+<xs:complexType name="listar">
 <xs:sequence>
 <xs:element name="tipo" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listarTodosResponse">
+<xs:complexType name="listarResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:veiculo" minOccurs="0"/>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
