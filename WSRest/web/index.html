@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+   <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script languageGet="javascript">
+        var xmlhttp;
+        function init() {
+        // put more code here in case you are concerned about browsers that do not provide XMLHttpRequest object directly
+        xmlhttp = new XMLHttpRequest();
+        }
+
+        function postdetails() {
+            var codigoPost = document.getElementById("codigoPost").value;
+            var placaPost = document.getElementById("placaPost").value;
+            var tipoPost = document.getElementById("tipoPost").value;
+            var capacidadePost = document.getElementById("capacidadePost").value;
+            var unCapacPost = document.getElementById("unCapacPost").value;
+            var json = '{"codigo":' + codigoPost + ', "placa":"' + placaPost + '","tipo":' + tipoPost + 
+                    '","capacidade":' + capacidadePost + '","unCapac":' + unCapacPost + '}';
+            var urlPost = "http://localhost:8080/WSRest/webresources/ws/adicionaveiculo";
+            xmlhttp.open('POST', urlPost, true);
+            xmlhttp.setRequestHeader('Content-Type', 'application/json');
+            xmlhttp.send(json);
+            xmlhttp.onreadystatechange = function(){
+                if (xmlhttp.readyState === 4){
+                    if (xmlhttp.status === 200) {
+                        var det = xmlhttp.responseText;
+                        if (det === "false") {
+                            alert("CÃ³digo da Mensagem jÃ¡ existe");
+                        } else
+                            alert("Incluido com sucesso!");
+                        }
+                    }
+            };
+        }
+
+        function getdetails() {
+
+            var codigo = document.getElementById("codigo");
+            var url = "http://localhost:8080/WSRest/webresources/ws/veiculo/" + codigo.value;
+            xmlhttp.open('GET', url, true);
+            xmlhttp.send(null);
+            xmlhttp.onreadystatechange = function() {
+                var placaGet = document.getElementById("placa");
+                var tipoGet = document.getElementById("tipo");
+                var capacidadeGet = document.getElementById("capacidade");
+                var unCapacGet = document.getElementById("unCapac");
+                if (xmlhttp.readyState === 4){
+                    if (xmlhttp.readyState === 4){
+                        if (xmlhttp.status === 200) {
+                            var det = eval("(" + xmlhttp.responseText + ")");
+                            if (det.codigo > 0) {
+                                msgGet.value = det.mensagem;
+                                switch (det.tipo){
+                                    case 1: tipoGet.value = "Carro";
+                                        break;
+                                    case 2: tipoGet.value = "Caminhão Toco";
+                                        break;
+                                    case 3: tipoGet.value = "Caminhão Carreta";
+                                        break;
+                                    case 4: tipoGet.value = "Caminhão Bitrem";
+                                        break;
+                                    case 5: tipoGet.value = "Caminhão Triminhão";
+                                        break;
+                                    case 6: tipoGet.value = "Moto";
+                                        break;
+                                    case 7: tipoGet.value = "Triciclo";
+                                        break;
+                                    case 8: tipoGet.value = "Quadriciclo";
+                                        break;
+                                    }
+                            }           
+                            else {
+                                alert("NÃ£o foi possÃ­vel realizar a operaÃ§Ã£o");
+                            }
+                            }
+                            else{
+                                alert("Codigo de Mensagem invÃ¡lido");
+                            }
+                            }
+                };
+            }
+    }
+
+        function deletebyid(){
+            var id = document.getElementById("id");
+            var url = "http://localhost:8080/WebServiceRest/javaws/wsrest/delete/" + codigo.value;
+            xmlhttp.open('DELETE', url, true);
+            xmlhttp.send(null);
+            xmlhttp.onreadystatechange = function(){
+                if (xmlhttp.readyState === 4){
+                    if (xmlhttp.status === 200) {
+                        var det = eval("(" + xmlhttp.responseText + ")");
+                        alert("delete: " + xmlhttp.responseText);
+                        if (det.id) {
+                            alert("Deletado com sucesso");
+                        }
+                        else {
+                            msgGet.value = "";
+                            tipoGet.value = "";
+                            alert("ID Bela Mensagem invÃ¡lido");
+                            }
+                        } else
+                            alert("Erro:" + xmlhttp.responseText);
+                        }
+
+            };
+        }
+
+        function putbyid(){
+            var idPut = document.getElementById("idPut").value;
+            var mensagemPut = document.getElementById("mensagemPut").value;
+            var tipoPut = document.getElementById("tipoPut").value;
+            var json = '{"id":' + idPut + ', "mensagem":"' + mensagemPut + '","tipo":' + tipoPut + '}';
+            var url = "http://localhost:8080/WebServiceRest/javaws/wsrest/altera";
+            xmlhttp.open('PUT', url, true);
+            xmlhttp.send(json);
+            xmlhttp.setRequestHeader('Content-Type', 'application/json');
+        }
+
+        function getbytipo() {
+            
+            var tipo = document.getElementById("tipoTipo");
+            var url = "http://localhost:8080/WebServiceRest/javaws/wsrest/random/" + tipo.value;
+            xmlhttp.open('GET', url, true);
+            xmlhttp.send(null);
+            xmlhttp.onreadystatechange = function() {
+                var msgTipo = document.getElementById("mensagemTipo");
+                var idTipo = document.getElementById("idTipo");
+                
+                if (xmlhttp.readyState === 4){
+                    if (xmlhttp.readyState === 4){
+                        if (xmlhttp.status === 200) {
+                            alert(xmlhttp.responseText);
+                            var det = eval("(" + xmlhttp.responseText + ")");
+                            if (det.id > 0) {
+                                idTipo.value = det.id;
+                                msgTipo.value = det.mensagem;
+                                tipo.value = det.tipo;
+                            }           
+                            else {
+                                alert("NÃ£o foi possÃ­vel realizar a operaÃ§Ã£o");
+                            }
+                            }
+                            else{
+                                alert("Tipo nÃ£o encontrado");
+                            }
+                            }
+                };
+            }
+    }
+
+    </script>
+</head>
+<body  onload="init()">
+    <h3>Adiciona Veiculo  </h3>
+
+    <table>
+
+        <tr>
+            <td>codigo:  </td>
+            <td><input type="text" id="codigoPost" size="10"/>  
+        </tr>
+
+        <tr>
+            <td>Placa:  </td>
+            <td><input type="text" id="placaPost" size="20"/> </td>
+        </tr>
+
+        <tr>
+            <td>Tipo: </td>
+            <td>
+                <select id="tipoPost">
+                    <option value = 1> Carro </option>
+                    <option value = 2> CaminhÃ£o Toco </option>
+                    <option value = 3> CaminhÃ£o Carreta </option>
+                    <option value = 4> CaminhÃ£o Bitrem </option>
+                    <option value = 5> CaminhÃ£o TreminhÃ£o </option>
+                    <option value = 6> Moto </option>
+                    <option value = 7> Triciclo </option>
+                    <option value = 8> Quadriciclo </option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>Capacidade:  </td>
+            <td><input type="text" id="capacidadePost" size="20"/> </td>
+        </tr>
+         <tr>
+            <td>UN. Capacidade:  </td>
+            <td><input type="text" id="unCapacPost" size="20"/> </td>
+            <td><input type="button" value="Adicionar" onclick="postdetails()" /></td>
+        </tr>
+        
+        
+       
+        <br>
+    </table>
+    <br><br
+        
+    <h3>Consulta Veiculo  </h3>
+    <table>
+        <tr>
+            <td> Codigo:  </td>
+            <td><input type="text" id="codigo" size="10"/>  
+                <input type="button" value="Consultar" onclick="getdetails()"/>
+        </tr>
+        <tr>
+            <td>Placa:  </td>
+            <td><input type="text" readonly id="placaGet" size="20"/> </td>
+        </tr>
+
+        <tr>
+            <td>Tipo: </td>
+            <td><input type="text" readonly id="tipoGet" size="30"/> </td>
+        </tr>
+        <tr>
+            <td>Capacidade:  </td>
+            <td><input type="text" readonly id="capacidadeGet" size="20"/> </td>
+        </tr>
+        <tr>
+            <td>Un. Capacidade:  </td>
+            <td><input type="text" readonly id="uncapacGet" size="20"/> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Deletar" onclick="deletebyid()"/></td>
+        </tr>
+
+    </table>
+    <br>
+
+    <h3>Altera Bela Mensagem  </h3>
+
+    <table>
+
+        <tr>
+            <td>ID:  </td>
+            <td><input type="text" id="idPut" size="10"/>  
+        </tr>
+
+        <tr>
+            <td>Mensagem:  </td>
+            <td><input type="text" id="mensagemPut" size="20"/> </td>
+        </tr>
+
+        <tr>
+            <td>Tipo: </td>
+            <td>
+                <select id="tipoPut">
+                    <option value = 1> MotivaÃ§Ã£o </option>
+                    <option value = 2> FelicitaÃ§Ãµes </option>
+                    <option value = 3> Saudade </option>
+                    <option value = 4> SuperaÃ§Ã£o de Problemas </option>
+                    <option value = 5> Amor </option>
+                    <option value = 6> ExperiÃªncia de Vida </option>
+                    <option value = 7> CarÃ¡ter </option>
+                    <option value = 8> Top </option>
+                </select></td>
+            <td><input type="button" value="Alterar Registro" onclick="putbyid()" /></td>
+        </tr>
+        <br>
+    </table>
+    <br>
+
+    <h3>Consulta RandÃ´mica  </h3>
+
+    <table>
+
+        <tr>
+            <td>Tipo: </td>
+            <td>
+                <select id="tipoTipo">
+                    <option value = 1> MotivaÃ§Ã£o </option>
+                    <option value = 2> FelicitaÃ§Ãµes </option>
+                    <option value = 3> Saudade </option>
+                    <option value = 4> SuperaÃ§Ã£o de Problemas </option>
+                    <option value = 5> Amor </option>
+                    <option value = 6> ExperiÃªncia de Vida </option>
+                    <option value = 7> CarÃ¡ter </option>
+                    <option value = 8> Top </option>
+                </select></td>
+            <td><input type="button" value="Consultar" onclick="getbytipo()"/></td>
+        </tr> 
+        <tr>
+            <td> ID:  </td>
+            <td><input type="text" readonly id="idTipo" size="10"/>      
+        </tr>
+        <tr>
+            <td>Mensagem:  </td>
+            <td><input type="text" readonly id="mensagemTipo" size="20"/> </td>
+        </tr>
+
+
+    </table>
+
+</html>
