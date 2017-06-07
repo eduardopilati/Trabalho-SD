@@ -92,6 +92,17 @@ public class ServerSoap {
 
     }
 
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "excluir")
+    public Boolean excluir(@WebParam(name = "parameter") int parameter) throws DatabaseException {
+        DatabaseHelper.removerVeiculo(parameter);
+        //TODO write your implementation code here:
+        return null;
+    }
+
+
 
 
 }

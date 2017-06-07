@@ -18,6 +18,10 @@
 
 <xs:element name="consultarResponse" type="tns:consultarResponse"/>
 
+<xs:element name="excluir" type="tns:excluir"/>
+
+<xs:element name="excluirResponse" type="tns:excluirResponse"/>
+
 <xs:element name="listarTodos" type="tns:listarTodos"/>
 
 <xs:element name="listarTodosResponse" type="tns:listarTodosResponse"/>
@@ -44,6 +48,12 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="DatabaseException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="alterar">
 <xs:sequence>
 <xs:element name="codigo" type="xs:int"/>
@@ -60,9 +70,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="DatabaseException">
+<xs:complexType name="excluir">
 <xs:sequence>
-<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="parameter" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="excluirResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

@@ -5,6 +5,9 @@
  */
 package client.soapinterface;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import serversoap.DatabaseException_Exception;
 import serversoap.Veiculo;
 
 /**
@@ -170,7 +173,11 @@ public class viewconsulta extends javax.swing.JFrame {
 
     private void btpesqconsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btpesqconsActionPerformed
         Veiculo vel = new Veiculo();
-        vel = consultar(Integer.parseInt(campcodcons.getText()));
+        try {
+            vel = consultar(Integer.parseInt(campcodcons.getText()));
+        } catch (DatabaseException_Exception ex) {
+            Logger.getLogger(viewconsulta.class.getName()).log(Level.SEVERE, null, ex);
+        }
         campplacacons.setText(vel.getPlaca());
         camptipocons.setText(String.valueOf(vel.getTipo()));
         campcapcons.setText(String.valueOf(vel.getCapacidade()));
@@ -231,7 +238,7 @@ public class viewconsulta extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 
-    private static Veiculo consultar(int codigo) {
+    private static Veiculo consultar(int codigo) throws DatabaseException_Exception {
         serversoap.ServerSoap_Service service = new serversoap.ServerSoap_Service();
         serversoap.ServerSoap port = service.getServerSoapPort();
         return port.consultar(codigo);

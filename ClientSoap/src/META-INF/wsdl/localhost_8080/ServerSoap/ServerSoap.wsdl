@@ -4,6 +4,15 @@
 <xsd:import namespace="http://serversoap/" schemaLocation="http://localhost:8080/ServerSoap/ServerSoap?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="excluir">
+<part name="parameters" element="tns:excluir"/>
+</message>
+<message name="excluirResponse">
+<part name="parameters" element="tns:excluirResponse"/>
+</message>
+<message name="DatabaseException">
+<part name="fault" element="tns:DatabaseException"/>
+</message>
 <message name="consultar">
 <part name="parameters" element="tns:consultar"/>
 </message>
@@ -15,9 +24,6 @@
 </message>
 <message name="alterarResponse">
 <part name="parameters" element="tns:alterarResponse"/>
-</message>
-<message name="DatabaseException">
-<part name="fault" element="tns:DatabaseException"/>
 </message>
 <message name="adiciona">
 <part name="parameters" element="tns:adiciona"/>
@@ -38,9 +44,15 @@
 <part name="parameters" element="tns:adiciona2Response"/>
 </message>
 <portType name="ServerSoap">
+<operation name="excluir">
+<input wsam:Action="http://serversoap/ServerSoap/excluirRequest" message="tns:excluir"/>
+<output wsam:Action="http://serversoap/ServerSoap/excluirResponse" message="tns:excluirResponse"/>
+<fault message="tns:DatabaseException" name="DatabaseException" wsam:Action="http://serversoap/ServerSoap/excluir/Fault/DatabaseException"/>
+</operation>
 <operation name="consultar">
 <input wsam:Action="http://serversoap/ServerSoap/consultarRequest" message="tns:consultar"/>
 <output wsam:Action="http://serversoap/ServerSoap/consultarResponse" message="tns:consultarResponse"/>
+<fault message="tns:DatabaseException" name="DatabaseException" wsam:Action="http://serversoap/ServerSoap/consultar/Fault/DatabaseException"/>
 </operation>
 <operation name="alterar">
 <input wsam:Action="http://serversoap/ServerSoap/alterarRequest" message="tns:alterar"/>
@@ -64,6 +76,18 @@
 </portType>
 <binding name="ServerSoapPortBinding" type="tns:ServerSoap">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="excluir">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="DatabaseException">
+<soap:fault name="DatabaseException" use="literal"/>
+</fault>
+</operation>
 <operation name="consultar">
 <soap:operation soapAction=""/>
 <input>
@@ -72,6 +96,9 @@
 <output>
 <soap:body use="literal"/>
 </output>
+<fault name="DatabaseException">
+<soap:fault name="DatabaseException" use="literal"/>
+</fault>
 </operation>
 <operation name="alterar">
 <soap:operation soapAction=""/>

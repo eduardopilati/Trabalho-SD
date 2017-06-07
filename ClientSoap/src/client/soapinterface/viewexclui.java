@@ -5,6 +5,11 @@
  */
 package client.soapinterface;
 
+import java.awt.HeadlessException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import serversoap.DatabaseException_Exception;
 import serversoap.Veiculo;
 
 /**
@@ -116,7 +121,16 @@ public class viewexclui extends javax.swing.JFrame {
     }//GEN-LAST:event_btvoltarexcActionPerformed
 
     private void btexcexcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btexcexcActionPerformed
-        // TODO add your handling code here:
+        
+        try {
+            excluir(Integer.parseInt(campcodexc.getText()));
+            JOptionPane.showMessageDialog(null, "Veículo excluido com sucesso!");
+            
+            // TODO add your handling code here:
+        } catch (DatabaseException_Exception ex) {
+            //Logger.getLogger(viewexclui.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Problema na exclusão!");
+        }
     }//GEN-LAST:event_btexcexcActionPerformed
 
     /**
@@ -162,6 +176,12 @@ public class viewexclui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private static Boolean excluir(int parameter) throws DatabaseException_Exception {
+        serversoap.ServerSoap_Service service = new serversoap.ServerSoap_Service();
+        serversoap.ServerSoap port = service.getServerSoapPort();
+        return port.excluir(parameter);
+    }
 
 
 }
