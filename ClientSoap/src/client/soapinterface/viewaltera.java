@@ -5,6 +5,10 @@
  */
 package client.soapinterface;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import serversoap.DatabaseException_Exception;
 import serversoap.Veiculo;
 
 /**
@@ -178,8 +182,16 @@ public class viewaltera extends javax.swing.JFrame {
     }//GEN-LAST:event_campcodaltActionPerformed
 
     private void btaltaltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btaltaltActionPerformed
-        
-        // TODO add your handling code here:
+        try {
+            alterar(Integer.parseInt(campcodalt.getText()), campplacaalt.getText(), Integer.parseInt(camptipoalt.getText()),
+                    Integer.parseInt(camptipoalt.getText()), campuncapalt.getText());
+            JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
+
+            // TODO add your handling code here:
+        } catch (DatabaseException_Exception ex) {
+            JOptionPane.showMessageDialog(null, "Problema na alteração!");
+            //Logger.getLogger(viewaltera.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btaltaltActionPerformed
 
     private void btaltvoltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btaltvoltActionPerformed
@@ -239,6 +251,12 @@ public class viewaltera extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+    private static Veiculo alterar(int codigo, java.lang.String placa, int tipo, int capacidade, java.lang.String unCapacidade) throws DatabaseException_Exception {
+        serversoap.ServerSoap_Service service = new serversoap.ServerSoap_Service();
+        serversoap.ServerSoap port = service.getServerSoapPort();
+        return port.alterar(codigo, placa, tipo, capacidade, unCapacidade);
+    }
 
 
 
