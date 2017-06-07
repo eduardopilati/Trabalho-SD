@@ -8,6 +8,8 @@ package serversoap;
 import data.Veiculo;
 import database.DatabaseException;
 import database.DatabaseHelper;
+import java.util.ArrayList;
+import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -35,19 +37,6 @@ public class ServerSoap {
         return vel;
     }
 
-    /**
-     * Operação de Web service
-     */
-    @WebMethod(operationName = "listarTodos")
-    public Veiculo listarTodos(@WebParam(name = "tipo") int tipo) {
-        
-        Veiculo vel = new Veiculo();
-        vel.setTipo(tipo);
-        vel.getTipo();
-        
-        
-        return vel;
-    }
 
     /**
      * Operação de Web service
@@ -103,6 +92,20 @@ public class ServerSoap {
     }
 
 
+    
+
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "listar")
+    public List listar(@WebParam(name = "tipo") int tipo) throws DatabaseException {
+
+        ArrayList<Veiculo> veiculos = new ArrayList<>();
+        veiculos = (ArrayList<Veiculo>) DatabaseHelper.veiculosPorTipo(tipo);
+        //TODO write your implementation code here:
+        return veiculos;
+    }
 
 
 }
