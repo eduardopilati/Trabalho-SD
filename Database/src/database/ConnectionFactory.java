@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 class ConnectionFactory {
     static String driver = "org.postgresql.Driver";
     static String user = "postgres";
-    static String senha = "admin";
+    static String senha = "masterkey";
     static String url = "jdbc:postgresql://localhost:5432/sd";
     
     public static Connection getConnection() throws DatabaseException{

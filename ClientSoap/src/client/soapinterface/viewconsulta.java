@@ -5,6 +5,8 @@
  */
 package client.soapinterface;
 
+import serversoap.Veiculo;
+
 /**
  *
  * @author UNIVERSO
@@ -50,6 +52,11 @@ public class viewconsulta extends javax.swing.JFrame {
         jLabel2.setText("Código:");
 
         btpesqcons.setText("Pesquisar");
+        btpesqcons.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btpesqconsActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Placa:");
 
@@ -161,6 +168,10 @@ public class viewconsulta extends javax.swing.JFrame {
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btvoltarconsActionPerformed
 
+    private void btpesqconsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btpesqconsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btpesqconsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -213,4 +224,10 @@ public class viewconsulta extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+    private static Veiculo consultar(int codigo) {
+        serversoap.ServerSoap_Service service = new serversoap.ServerSoap_Service();
+        serversoap.ServerSoap port = service.getServerSoapPort();
+        return port.consultar(codigo);
+    }
 }

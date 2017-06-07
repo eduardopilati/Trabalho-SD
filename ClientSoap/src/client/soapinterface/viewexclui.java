@@ -5,6 +5,8 @@
  */
 package client.soapinterface;
 
+import serversoap.Veiculo;
+
 /**
  *
  * @author UNIVERSO
@@ -41,6 +43,11 @@ public class viewexclui extends javax.swing.JFrame {
         jLabel2.setText("Codigo:");
 
         btexcexc.setText("Excluir");
+        btexcexc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btexcexcActionPerformed(evt);
+            }
+        });
 
         btvoltarexc.setText("Voltar");
         btvoltarexc.addActionListener(new java.awt.event.ActionListener() {
@@ -108,6 +115,10 @@ public class viewexclui extends javax.swing.JFrame {
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btvoltarexcActionPerformed
 
+    private void btexcexcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btexcexcActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btexcexcActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -151,4 +162,10 @@ public class viewexclui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private static Veiculo apagar(int codigo) {
+        serversoap.ServerSoap_Service service = new serversoap.ServerSoap_Service();
+        serversoap.ServerSoap port = service.getServerSoapPort();
+        return port.apagar(codigo);
+    }
 }

@@ -5,6 +5,9 @@
  */
 package client.soapinterface;
 
+import javax.swing.JOptionPane;
+import serversoap.Veiculo;
+
 /**
  *
  * @author UNIVERSO
@@ -64,6 +67,11 @@ public class viewadd extends javax.swing.JFrame {
         });
 
         btadicadd.setText("Adicionar");
+        btadicadd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btadicaddActionPerformed(evt);
+            }
+        });
 
         campplacaadd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,6 +174,13 @@ public class viewadd extends javax.swing.JFrame {
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btvoltaraddActionPerformed
 
+    private void btadicaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btadicaddActionPerformed
+        adiciona(Integer.parseInt(campcodadd.getText()), campplacaadd.getText(), Integer.parseInt(camptipoadd.getText()), Integer.parseInt(camptipoadd.getText()), campouncapadd.getText());
+        
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_btadicaddActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -217,4 +232,10 @@ public class viewadd extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+    private static Veiculo adiciona(int codigo, java.lang.String placa, int tipo, int capacidade, java.lang.String unCapacidade) {
+        serversoap.ServerSoap_Service service = new serversoap.ServerSoap_Service();
+        serversoap.ServerSoap port = service.getServerSoapPort();
+        return port.adiciona(codigo, placa, tipo, capacidade, unCapacidade);
+    }
+
 }

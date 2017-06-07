@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://serversoap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://serversoap/">
+
+<xs:element name="adiciona" type="tns:adiciona"/>
+
+<xs:element name="adicionaResponse" type="tns:adicionaResponse"/>
+
+<xs:element name="alterar" type="tns:alterar"/>
+
+<xs:element name="alterarResponse" type="tns:alterarResponse"/>
+
+<xs:element name="apagar" type="tns:apagar"/>
+
+<xs:element name="apagarResponse" type="tns:apagarResponse"/>
+
+<xs:element name="consultar" type="tns:consultar"/>
+
+<xs:element name="consultarResponse" type="tns:consultarResponse"/>
+
+<xs:element name="listarTodos" type="tns:listarTodos"/>
+
+<xs:element name="listarTodosResponse" type="tns:listarTodosResponse"/>
+
+<xs:complexType name="consultar">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:veiculo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="veiculo">
+<xs:sequence>
+<xs:element name="capacidade" type="xs:int" minOccurs="0"/>
+<xs:element name="codigo" type="xs:int" minOccurs="0"/>
+<xs:element name="placa" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:int" minOccurs="0"/>
+<xs:element name="unCapac" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="apagar">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="apagarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:veiculo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alterar">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int"/>
+<xs:element name="placa" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:int"/>
+<xs:element name="capacidade" type="xs:int"/>
+<xs:element name="unCapacidade" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alterarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:veiculo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarTodos">
+<xs:sequence>
+<xs:element name="tipo" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarTodosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:veiculo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="adiciona">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int"/>
+<xs:element name="placa" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:int"/>
+<xs:element name="capacidade" type="xs:int"/>
+<xs:element name="unCapacidade" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="adicionaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:veiculo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
