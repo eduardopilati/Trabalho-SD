@@ -22,7 +22,7 @@ public class ServerSoap {
      */
     @WebMethod(operationName = "adiciona")
     public Veiculo adiciona(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") String placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapacidade") String unCapac) {
-        //TODO write your implementation code here:
+        
         Veiculo vel = new Veiculo();
         vel.setCodigo(codigo);
         vel.setPlaca(placa);
@@ -38,7 +38,7 @@ public class ServerSoap {
      */
     @WebMethod(operationName = "listarTodos")
     public Veiculo listarTodos(@WebParam(name = "tipo") int tipo) {
-        //TODO write your implementation code here:
+        
         Veiculo vel = new Veiculo();
         vel.setTipo(tipo);
         vel.getTipo();
@@ -52,7 +52,7 @@ public class ServerSoap {
      */
     @WebMethod(operationName = "consultar")
     public Veiculo consultar(@WebParam(name = "codigo") int codigo) {
-        //TODO write your implementation code here:
+        
         Veiculo vel = new Veiculo();
         vel.setCodigo(codigo);
         vel.getCodigo();
@@ -64,7 +64,8 @@ public class ServerSoap {
      */
     @WebMethod(operationName = "alterar")
     public Veiculo alterar(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") char placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapacidade") char unCapacidade) {
-        //TODO write your implementation code here:
+        
+        
         return null;
     }
 
@@ -73,7 +74,8 @@ public class ServerSoap {
      */
     @WebMethod(operationName = "apagar")
     public Veiculo apagar(@WebParam(name = "codigo") int codigo) {
-        //TODO write your implementation code here:
+        
+        
         return null;
     }
 
