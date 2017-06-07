@@ -81,9 +81,16 @@ public class ServerSoap {
      * Web service operation
      */
     @WebMethod(operationName = "alterar")
-    public Veiculo alterar(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") String placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapacidade") String unCapacidade) {
-        //TODO write your implementation code here:
-        return null;
+    public Veiculo alterar(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") String placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapacidade") String unCapacidade) throws DatabaseException {
+        Veiculo vel = new Veiculo();
+        vel.setCodigo(codigo);
+        vel.setPlaca(placa);
+        vel.setTipo(tipo);
+        vel.setCapacidade(capacidade);
+        vel.setUnCapac(unCapacidade);        
+        DatabaseHelper.alterarVeiculo(vel);
+        return vel;//TODO write your implementation code here:
+
     }
 
 

@@ -16,14 +16,14 @@
 <message name="alterarResponse">
 <part name="parameters" element="tns:alterarResponse"/>
 </message>
+<message name="DatabaseException">
+<part name="fault" element="tns:DatabaseException"/>
+</message>
 <message name="adiciona">
 <part name="parameters" element="tns:adiciona"/>
 </message>
 <message name="adicionaResponse">
 <part name="parameters" element="tns:adicionaResponse"/>
-</message>
-<message name="DatabaseException">
-<part name="fault" element="tns:DatabaseException"/>
 </message>
 <message name="listarTodos">
 <part name="parameters" element="tns:listarTodos"/>
@@ -45,6 +45,7 @@
 <operation name="alterar">
 <input wsam:Action="http://serversoap/ServerSoap/alterarRequest" message="tns:alterar"/>
 <output wsam:Action="http://serversoap/ServerSoap/alterarResponse" message="tns:alterarResponse"/>
+<fault message="tns:DatabaseException" name="DatabaseException" wsam:Action="http://serversoap/ServerSoap/alterar/Fault/DatabaseException"/>
 </operation>
 <operation name="adiciona">
 <input wsam:Action="http://serversoap/ServerSoap/adicionaRequest" message="tns:adiciona"/>
@@ -80,6 +81,9 @@
 <output>
 <soap:body use="literal"/>
 </output>
+<fault name="DatabaseException">
+<soap:fault name="DatabaseException" use="literal"/>
+</fault>
 </operation>
 <operation name="adiciona">
 <soap:operation soapAction=""/>

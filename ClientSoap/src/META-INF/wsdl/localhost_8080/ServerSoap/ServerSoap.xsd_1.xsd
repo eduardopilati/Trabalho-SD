@@ -50,13 +50,19 @@
 <xs:element name="placa" type="xs:string" minOccurs="0"/>
 <xs:element name="tipo" type="xs:int"/>
 <xs:element name="capacidade" type="xs:int"/>
-<xs:element name="unCapac" type="xs:string" minOccurs="0"/>
+<xs:element name="unCapacidade" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="alterarResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+<xs:element name="return" type="tns:veiculo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DatabaseException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -73,12 +79,6 @@
 <xs:complexType name="adiciona2Response">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="DatabaseException">
-<xs:sequence>
-<xs:element name="message" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
