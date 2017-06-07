@@ -10,6 +10,12 @@
 <message name="adicionaResponse">
 <part name="parameters" element="tns:adicionaResponse"/>
 </message>
+<message name="consultar">
+<part name="parameters" element="tns:consultar"/>
+</message>
+<message name="consultarResponse">
+<part name="parameters" element="tns:consultarResponse"/>
+</message>
 <message name="listarTodos">
 <part name="parameters" element="tns:listarTodos"/>
 </message>
@@ -22,12 +28,6 @@
 <message name="alterarResponse">
 <part name="parameters" element="tns:alterarResponse"/>
 </message>
-<message name="consultar">
-<part name="parameters" element="tns:consultar"/>
-</message>
-<message name="consultarResponse">
-<part name="parameters" element="tns:consultarResponse"/>
-</message>
 <message name="apagar">
 <part name="parameters" element="tns:apagar"/>
 </message>
@@ -39,6 +39,10 @@
 <input wsam:Action="http://serversoap/ServerSoap/adicionaRequest" message="tns:adiciona"/>
 <output wsam:Action="http://serversoap/ServerSoap/adicionaResponse" message="tns:adicionaResponse"/>
 </operation>
+<operation name="consultar">
+<input wsam:Action="http://serversoap/ServerSoap/consultarRequest" message="tns:consultar"/>
+<output wsam:Action="http://serversoap/ServerSoap/consultarResponse" message="tns:consultarResponse"/>
+</operation>
 <operation name="listarTodos">
 <input wsam:Action="http://serversoap/ServerSoap/listarTodosRequest" message="tns:listarTodos"/>
 <output wsam:Action="http://serversoap/ServerSoap/listarTodosResponse" message="tns:listarTodosResponse"/>
@@ -46,10 +50,6 @@
 <operation name="alterar">
 <input wsam:Action="http://serversoap/ServerSoap/alterarRequest" message="tns:alterar"/>
 <output wsam:Action="http://serversoap/ServerSoap/alterarResponse" message="tns:alterarResponse"/>
-</operation>
-<operation name="consultar">
-<input wsam:Action="http://serversoap/ServerSoap/consultarRequest" message="tns:consultar"/>
-<output wsam:Action="http://serversoap/ServerSoap/consultarResponse" message="tns:consultarResponse"/>
 </operation>
 <operation name="apagar">
 <input wsam:Action="http://serversoap/ServerSoap/apagarRequest" message="tns:apagar"/>
@@ -67,6 +67,15 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="consultar">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="listarTodos">
 <soap:operation soapAction=""/>
 <input>
@@ -77,15 +86,6 @@
 </output>
 </operation>
 <operation name="alterar">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="consultar">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
