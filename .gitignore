@@ -25,3 +25,9 @@
 /ServerSoap/dist/
 /ServerTCP/dist/
 /ServerUDP/dist/
+/WebApplication_Teste/nbproject/private/
+/WebApplication_TEST/nbproject/private/
+/WebApplication/nbproject/private/
+/WSRest/nbproject/private/
+/WSRest/build/
+/WSRest/dist/

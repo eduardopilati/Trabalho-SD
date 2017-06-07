@@ -18,6 +18,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -98,8 +99,8 @@ public class wsResource {
        
         
     }
-
-            
+    
+        
     /**
      * PUT method for updating or creating an instance of wsResource
      * @param content representation for the resource
@@ -114,14 +115,14 @@ public class wsResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public String adicionaVeiculo(String Veiculo) {
-        JSONObject parJsonVeiculo = new JSONObject(Veiculo);
+        JSONObject JSOveiculo = new JSONObject(Veiculo);
         System.out.println("passou adicionar");
         Veiculo v = new Veiculo();        
        // v.setCodigo(Integer.parseInt((String) parJsonVeiculo.get("codigo")));
-        v.setPlaca(parJsonVeiculo.get("placa").toString());
-        v.setTipo((Integer) parJsonVeiculo.get("tipo"));
-        v.setCapacidade((Integer) parJsonVeiculo.get("capacidade"));
-        v.setUnCapac(parJsonVeiculo.get("unCapac").toString());        
+        v.setPlaca(JSOveiculo.get("placa").toString());
+        v.setTipo((Integer) JSOveiculo.get("tipo"));
+        v.setCapacidade((Integer) JSOveiculo.get("capacidade"));
+        v.setUnCapac(JSOveiculo.get("unCapac").toString());        
         Gson r = new Gson();
         
         try {
@@ -135,5 +136,76 @@ public class wsResource {
            // System.out.println("erro " + ex.getMessage());
             return r.toJson(0);
         }
+    }
+    
+    /**
+     * Retrieves representation of an instance of ws.wsResourc
+     * 
+     *
+     * @param codigo
+     * @return  */
+    
+    
+    //DELETE não consegui fazer funcionar pq da um erro 405
+    @DELETE
+    @Path("/delete/{codigo}")
+    @Produces(MediaType.APPLICATION_JSON)
+          
+    public String deletarVeiculo(@PathParam("codigo") Integer codigo) {
+        Gson g = new Gson();
+        try {
+            Veiculo v = new Veiculo(); 
+            v = DatabaseHelper.consultarVeiculo(codigo);
+            DatabaseHelper.removerVeiculo(codigo);
+            System.out.println("passou aqui");
+            return g.toJson(v);
+        } catch (DatabaseException ex) {
+            Logger.getLogger(wsResource.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        } 
+    }
+    
+    
+    //delete funciona por get gambiarra unica forma que consegui fazer
+    @GET
+    @Path("/deleteGET/{codigo}")
+    @Produces(MediaType.APPLICATION_JSON)
+           
+    public String deletarGETVeiculo(@PathParam("codigo") Integer codigo) {
+        Gson g = new Gson();
+        try {
+            Veiculo v = new Veiculo(); 
+            v = DatabaseHelper.consultarVeiculo(codigo);
+            DatabaseHelper.removerVeiculo(codigo);
+            System.out.println("passou aqui");
+            return g.toJson(v);
+        } catch (DatabaseException ex) {
+            Logger.getLogger(wsResource.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        } 
+    }
+    
+    
+    @PUT
+    @Path("//alterar-veiculo")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String alterarVeiculo(String veiculo) throws Exception {
+        Gson g = new Gson();
+        Veiculo v = new Veiculo();
+       JSONObject JSOveiculo = new JSONObject(veiculo); //kressin que deu uma olhada e me ajudou com isso aqui e no incluir
+        
+        //copiei do incluir
+        v.setPlaca(JSOveiculo.get("placa").toString());
+        v.setTipo((Integer) JSOveiculo.get("tipo"));
+        v.setCapacidade((Integer) JSOveiculo.get("capacidade"));
+        v.setUnCapac(JSOveiculo.get("unCapac").toString());  
+        
+      try{
+          DatabaseHelper.alterarVeiculo(v);
+          return g.toJson(v);        
+    }catch (DatabaseException ex){
+    return g.toJson(1);
+         // System.out.println(ex.getMessage());
+    }
     }
 }
