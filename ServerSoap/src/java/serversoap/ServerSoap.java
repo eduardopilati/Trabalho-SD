@@ -6,6 +6,8 @@
 package serversoap;
 
 import data.Veiculo;
+import database.DatabaseException;
+import database.DatabaseHelper;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -21,7 +23,7 @@ public class ServerSoap {
      * Operação de Web service
      */
     @WebMethod(operationName = "adiciona")
-    public Veiculo adiciona(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") String placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapacidade") String unCapac) {
+    public Veiculo adiciona(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") String placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapacidade") String unCapac) throws DatabaseException {
         
         Veiculo vel = new Veiculo();
         vel.setCodigo(codigo);
@@ -29,7 +31,7 @@ public class ServerSoap {
         vel.setTipo(tipo);
         vel.setCapacidade(capacidade);
         vel.setUnCapac(unCapac);        
-        
+        DatabaseHelper.adicionarVeiculo(vel);
         return vel;
     }
 
