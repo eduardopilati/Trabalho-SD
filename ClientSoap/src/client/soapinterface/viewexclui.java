@@ -163,9 +163,5 @@ public class viewexclui extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
-    private static Veiculo apagar(int codigo) {
-        serversoap.ServerSoap_Service service = new serversoap.ServerSoap_Service();
-        serversoap.ServerSoap port = service.getServerSoapPort();
-        return port.apagar(codigo);
-    }
+
 }

@@ -70,6 +70,21 @@ public class ServerSoap {
         return null;
     }
 
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "adiciona2")
+    public Boolean adiciona2(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") String placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapac") String unCapac) throws DatabaseException {
+        Veiculo vel = new Veiculo();
+        vel.setCodigo(codigo);
+        vel.setPlaca(placa);
+        vel.setTipo(tipo);
+        vel.setCapacidade(capacidade);
+        vel.setUnCapac(unCapac);        
+        DatabaseHelper.adicionarVeiculo(vel);
+        return true;
+    }
+
 
 
 }

@@ -5,7 +5,10 @@
  */
 package client.soapinterface;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import serversoap.DatabaseException_Exception;
 import serversoap.Veiculo;
 
 /**
@@ -175,10 +178,17 @@ public class viewadd extends javax.swing.JFrame {
     }//GEN-LAST:event_btvoltaraddActionPerformed
 
     private void btadicaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btadicaddActionPerformed
-        adiciona(Integer.parseInt(campcodadd.getText()), campplacaadd.getText(), Integer.parseInt(camptipoadd.getText()), Integer.parseInt(camptipoadd.getText()), campouncapadd.getText());
-        
+        try {
+            adiciona(Integer.parseInt(campcodadd.getText()), campplacaadd.getText(), Integer.parseInt(camptipoadd.getText()),
+                    Integer.parseInt(camptipoadd.getText()), campouncapadd.getText());
+                    JOptionPane.showMessageDialog(null, "Mensagem adicionada com sucesso!");
 
+            
 // TODO add your handling code here:
+        } catch (DatabaseException_Exception ex) {
+            JOptionPane.showMessageDialog(null, "Problema em adicionar a mensagem!");
+            
+        }
     }//GEN-LAST:event_btadicaddActionPerformed
 
     /**
@@ -232,7 +242,7 @@ public class viewadd extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-    private static Veiculo adiciona(int codigo, java.lang.String placa, int tipo, int capacidade, java.lang.String unCapacidade) {
+    private static Veiculo adiciona(int codigo, java.lang.String placa, int tipo, int capacidade, java.lang.String unCapacidade) throws DatabaseException_Exception {
         serversoap.ServerSoap_Service service = new serversoap.ServerSoap_Service();
         serversoap.ServerSoap port = service.getServerSoapPort();
         return port.adiciona(codigo, placa, tipo, capacidade, unCapacidade);

@@ -4,23 +4,11 @@
 <xsd:import namespace="http://serversoap/" schemaLocation="http://localhost:8080/ServerSoap/ServerSoap?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="adiciona">
-<part name="parameters" element="tns:adiciona"/>
-</message>
-<message name="adicionaResponse">
-<part name="parameters" element="tns:adicionaResponse"/>
-</message>
 <message name="consultar">
 <part name="parameters" element="tns:consultar"/>
 </message>
 <message name="consultarResponse">
 <part name="parameters" element="tns:consultarResponse"/>
-</message>
-<message name="listarTodos">
-<part name="parameters" element="tns:listarTodos"/>
-</message>
-<message name="listarTodosResponse">
-<part name="parameters" element="tns:listarTodosResponse"/>
 </message>
 <message name="alterar">
 <part name="parameters" element="tns:alterar"/>
@@ -28,55 +16,54 @@
 <message name="alterarResponse">
 <part name="parameters" element="tns:alterarResponse"/>
 </message>
-<message name="apagar">
-<part name="parameters" element="tns:apagar"/>
+<message name="adiciona">
+<part name="parameters" element="tns:adiciona"/>
 </message>
-<message name="apagarResponse">
-<part name="parameters" element="tns:apagarResponse"/>
+<message name="adicionaResponse">
+<part name="parameters" element="tns:adicionaResponse"/>
+</message>
+<message name="DatabaseException">
+<part name="fault" element="tns:DatabaseException"/>
+</message>
+<message name="listarTodos">
+<part name="parameters" element="tns:listarTodos"/>
+</message>
+<message name="listarTodosResponse">
+<part name="parameters" element="tns:listarTodosResponse"/>
+</message>
+<message name="adiciona2">
+<part name="parameters" element="tns:adiciona2"/>
+</message>
+<message name="adiciona2Response">
+<part name="parameters" element="tns:adiciona2Response"/>
 </message>
 <portType name="ServerSoap">
-<operation name="adiciona">
-<input wsam:Action="http://serversoap/ServerSoap/adicionaRequest" message="tns:adiciona"/>
-<output wsam:Action="http://serversoap/ServerSoap/adicionaResponse" message="tns:adicionaResponse"/>
-</operation>
 <operation name="consultar">
 <input wsam:Action="http://serversoap/ServerSoap/consultarRequest" message="tns:consultar"/>
 <output wsam:Action="http://serversoap/ServerSoap/consultarResponse" message="tns:consultarResponse"/>
-</operation>
-<operation name="listarTodos">
-<input wsam:Action="http://serversoap/ServerSoap/listarTodosRequest" message="tns:listarTodos"/>
-<output wsam:Action="http://serversoap/ServerSoap/listarTodosResponse" message="tns:listarTodosResponse"/>
 </operation>
 <operation name="alterar">
 <input wsam:Action="http://serversoap/ServerSoap/alterarRequest" message="tns:alterar"/>
 <output wsam:Action="http://serversoap/ServerSoap/alterarResponse" message="tns:alterarResponse"/>
 </operation>
-<operation name="apagar">
-<input wsam:Action="http://serversoap/ServerSoap/apagarRequest" message="tns:apagar"/>
-<output wsam:Action="http://serversoap/ServerSoap/apagarResponse" message="tns:apagarResponse"/>
+<operation name="adiciona">
+<input wsam:Action="http://serversoap/ServerSoap/adicionaRequest" message="tns:adiciona"/>
+<output wsam:Action="http://serversoap/ServerSoap/adicionaResponse" message="tns:adicionaResponse"/>
+<fault message="tns:DatabaseException" name="DatabaseException" wsam:Action="http://serversoap/ServerSoap/adiciona/Fault/DatabaseException"/>
+</operation>
+<operation name="listarTodos">
+<input wsam:Action="http://serversoap/ServerSoap/listarTodosRequest" message="tns:listarTodos"/>
+<output wsam:Action="http://serversoap/ServerSoap/listarTodosResponse" message="tns:listarTodosResponse"/>
+</operation>
+<operation name="adiciona2">
+<input wsam:Action="http://serversoap/ServerSoap/adiciona2Request" message="tns:adiciona2"/>
+<output wsam:Action="http://serversoap/ServerSoap/adiciona2Response" message="tns:adiciona2Response"/>
+<fault message="tns:DatabaseException" name="DatabaseException" wsam:Action="http://serversoap/ServerSoap/adiciona2/Fault/DatabaseException"/>
 </operation>
 </portType>
 <binding name="ServerSoapPortBinding" type="tns:ServerSoap">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="adiciona">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="consultar">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="listarTodos">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -94,7 +81,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="apagar">
+<operation name="adiciona">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -102,6 +89,30 @@
 <output>
 <soap:body use="literal"/>
 </output>
+<fault name="DatabaseException">
+<soap:fault name="DatabaseException" use="literal"/>
+</fault>
+</operation>
+<operation name="listarTodos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="adiciona2">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="DatabaseException">
+<soap:fault name="DatabaseException" use="literal"/>
+</fault>
 </operation>
 </binding>
 <service name="ServerSoap">
