@@ -59,37 +59,15 @@ public class ServerSoap {
         return vel;
     }
 
-
-    /**
-     * Operação de Web service
-     */
-<<<<<<< HEAD
-    @WebMethod(operationName = "apagar")
-    public Veiculo apagar(@WebParam(name = "codigo") int codigo) {
-        //TODO write your implementation code here:
-=======
-    @WebMethod(operationName = "alterar")
-    public Veiculo alterar(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") char placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapacidade") char unCapacidade) {
-        
-        
->>>>>>> 586bf6d0974f6006a3f3b56b07580baacbb866ca
-        return null;
-    }
-
     /**
      * Web service operation
      */
-<<<<<<< HEAD
     @WebMethod(operationName = "alterar")
-    public Veiculo alterar(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") String placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapacidade") String unCapacidade) {
+    public Boolean alterar(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") String placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapac") String unCapac) {
         //TODO write your implementation code here:
-=======
-    @WebMethod(operationName = "apagar")
-    public Veiculo apagar(@WebParam(name = "codigo") int codigo) {
-        
-        
->>>>>>> 586bf6d0974f6006a3f3b56b07580baacbb866ca
         return null;
     }
+
+
 
 }
