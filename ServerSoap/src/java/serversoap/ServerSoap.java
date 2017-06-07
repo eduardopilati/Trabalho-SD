@@ -53,11 +53,10 @@ public class ServerSoap {
      * Operação de Web service
      */
     @WebMethod(operationName = "consultar")
-    public Veiculo consultar(@WebParam(name = "codigo") int codigo) {
+    public Veiculo consultar(@WebParam(name = "codigo") int codigo) throws DatabaseException {
         
         Veiculo vel = new Veiculo();
-        vel.setCodigo(codigo);
-        vel.getCodigo();
+        vel = DatabaseHelper.consultarVeiculo(codigo);
         return vel;
     }
 

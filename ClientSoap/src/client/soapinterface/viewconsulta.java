@@ -169,6 +169,12 @@ public class viewconsulta extends javax.swing.JFrame {
     }//GEN-LAST:event_btvoltarconsActionPerformed
 
     private void btpesqconsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btpesqconsActionPerformed
+        Veiculo vel = new Veiculo();
+        vel = consultar(Integer.parseInt(campcodcons.getText()));
+        campplacacons.setText(vel.getPlaca());
+        camptipocons.setText(String.valueOf(vel.getTipo()));
+        campcapcons.setText(String.valueOf(vel.getCapacidade()));
+        campuncapcons.setText(vel.getUnCapac());
         // TODO add your handling code here:
     }//GEN-LAST:event_btpesqconsActionPerformed
 
@@ -230,4 +236,5 @@ public class viewconsulta extends javax.swing.JFrame {
         serversoap.ServerSoap port = service.getServerSoapPort();
         return port.consultar(codigo);
     }
+
 }
