@@ -5,6 +5,8 @@
  */
 package client.soapinterface;
 
+import serversoap.Veiculo;
+
 /**
  *
  * @author UNIVERSO
@@ -176,6 +178,7 @@ public class viewaltera extends javax.swing.JFrame {
     }//GEN-LAST:event_campcodaltActionPerformed
 
     private void btaltaltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btaltaltActionPerformed
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_btaltaltActionPerformed
 
@@ -236,4 +239,12 @@ public class viewaltera extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+    private static Veiculo alterar(int codigo, int placa, int tipo, int capacidade, int unCapacidade) {
+        serversoap.ServerSoap_Service service = new serversoap.ServerSoap_Service();
+        serversoap.ServerSoap port = service.getServerSoapPort();
+        return port.alterar(codigo, placa, tipo, capacidade, unCapacidade);
+    }
+
+
 }

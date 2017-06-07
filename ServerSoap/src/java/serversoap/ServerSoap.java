@@ -59,20 +59,21 @@ public class ServerSoap {
         return vel;
     }
 
-    /**
-     * Operação de Web service
-     */
-    @WebMethod(operationName = "alterar")
-    public Veiculo alterar(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") char placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapacidade") char unCapacidade) {
-        //TODO write your implementation code here:
-        return null;
-    }
 
     /**
      * Operação de Web service
      */
     @WebMethod(operationName = "apagar")
     public Veiculo apagar(@WebParam(name = "codigo") int codigo) {
+        //TODO write your implementation code here:
+        return null;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "alterar")
+    public Veiculo alterar(@WebParam(name = "codigo") int codigo, @WebParam(name = "placa") String placa, @WebParam(name = "tipo") int tipo, @WebParam(name = "capacidade") int capacidade, @WebParam(name = "unCapacidade") String unCapacidade) {
         //TODO write your implementation code here:
         return null;
     }
