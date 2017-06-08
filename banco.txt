@@ -1,0 +1,27 @@
+CREATE DATABASE sd
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Portuguese_Brazil.1252'
+    LC_CTYPE = 'Portuguese_Brazil.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+-- Após conectar no banco SD:
+
+create table veiculo(
+    codigo serial primary key,
+    placa varchar(7),
+    tipo int,
+    capacidade int,
+    un_capac varchar(5)
+);
+
+create table posicao(
+    codigo int references veiculos(codigo),
+    seq serial,
+    data_hora date,
+    latitude real,
+    longitude real,
+    primary key(codigo, seq)
+);
