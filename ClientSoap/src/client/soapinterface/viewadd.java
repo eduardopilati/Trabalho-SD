@@ -56,7 +56,7 @@ public class viewadd extends javax.swing.JFrame {
 
         jLabel5.setText("Capacidade:");
 
-        jLabel6.setText("UnCapac:");
+        jLabel6.setText("Unidade");
 
         btvoltaradd.setText("Voltar");
         btvoltaradd.addActionListener(new java.awt.event.ActionListener() {

@@ -68,7 +68,7 @@ public class viewaltera extends javax.swing.JFrame {
 
         jLabel6.setText("Capacidade:");
 
-        jLabel7.setText("UnCapac:");
+        jLabel7.setText("Unidade:");
 
         btaltalt.setText("Alterar");
         btaltalt.addActionListener(new java.awt.event.ActionListener() {

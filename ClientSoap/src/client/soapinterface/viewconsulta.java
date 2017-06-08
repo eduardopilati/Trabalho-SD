@@ -67,7 +67,7 @@ public class viewconsulta extends javax.swing.JFrame {
 
         jLabel5.setText("Capacidade:");
 
-        jLabel6.setText("Uncapac:");
+        jLabel6.setText("Unidade:");
 
         btvoltarcons.setText("Voltar");
         btvoltarcons.addActionListener(new java.awt.event.ActionListener() {
