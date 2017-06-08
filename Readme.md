@@ -24,6 +24,7 @@
 | Cliente com interface texto para o servidor TCP | Marciel  | Java |
 | Cliente com iterface gr&aacute;fica para o servi&ccedil;o Soap | Jader | Java |
 | Cliente Web para o servi&ccedil;o Rest | Tiago | Javascript |
+| Replicação para o Banco de Dados | Guilherme | PostgreSQL |
 
 ## Orienta&ccedil;&otilde;es
 
