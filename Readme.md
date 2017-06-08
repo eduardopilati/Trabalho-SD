@@ -14,16 +14,17 @@
 
 ## Aplica&ccedil;&otilde;es
 
-| Aplica&ccedil;&atilde;o | Componente | Status |
-| ------------------------|------------|-----------|
-| Receptor de localiza&ccedil;&atilde;o - UPD | Leonardo B. |  |
-| Servidor de acesso ao BD - TCP | Jorge |  |
-| Servi&ccedil;o Web Soap | Gustavo |  |
-| Servi&ccedil;o Web Rest | Guilherme |  |
-| Simulador de localiza&ccedil;&atilde;o do ve&iacute;culo UDP | Eduardo | Finalizado |
-| Cliente com interface texto para o servidor TCP | Marciel  |  |
-| Cliente com iterface gr&aacute;fica para o servi&ccedil;o Soap |  |  |
-| Cliente Web para o servi&ccedil;o Rest | Tiago |  |
+| Aplica&ccedil;&atilde;o | Componente | Tecnologia Utilizada | 
+| ------------------------|------------|----------------------|
+| Receptor de localiza&ccedil;&atilde;o - UPD | Leonardo B. | Java |
+| Servidor de acesso ao BD - TCP | Jorge | Java |
+| Servi&ccedil;o Web Soap | Gustavo | Java e Glassfish |
+| Servi&ccedil;o Web Rest | Guilherme | Java e Glassfish |
+| Simulador de localiza&ccedil;&atilde;o do ve&iacute;culo UDP | Eduardo | Java |
+| Cliente com interface texto para o servidor TCP | Marciel  | Java |
+| Cliente com iterface gr&aacute;fica para o servi&ccedil;o Soap | Jader | Java |
+| Cliente Web para o servi&ccedil;o Rest | Tiago | Javascript |
+| Replicação para o Banco de Dados | Guilherme | PostgreSQL |
 
 ## Orienta&ccedil;&otilde;es
 
